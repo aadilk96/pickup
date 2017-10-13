@@ -20,7 +20,7 @@ export class AchievementsPage {
     this.items = []; 
     for(let i = 1; i <=10; i++){
       this.items.push({
-        text: "Item " + i, 
+        text: "Achievement " + i, 
         id: i,
         visible: false
       });
