@@ -14,8 +14,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'achievements.html',
 })
 export class AchievementsPage {
+  items:any[]; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.items = []; 
+    for(let i = 1; i <=10; i++){
+      this.items.push({
+        text: "Item " + i, 
+        id: i 
+      });
+    }
   }
 
   ionViewDidLoad() {
