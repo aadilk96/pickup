@@ -21,7 +21,8 @@ export class AchievementsPage {
     for(let i = 1; i <=10; i++){
       this.items.push({
         text: "Item " + i, 
-        id: i 
+        id: i,
+        visible: false
       });
     }
   }
@@ -30,4 +31,12 @@ export class AchievementsPage {
     console.log('ionViewDidLoad AchievementsPage');
   }
 
+  expand(item) {
+    item.visible = !(item.visible);
+    for (let i = 0; i < 10; i++) {
+      if (this.items[i] != item) {
+        this.items[i].visible = false;
+      }
+    }
+  }
 }
