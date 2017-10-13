@@ -1,3 +1,39 @@
 page-feed {
+    
+    ion-item {
+        font-size: 6px;
+        border: 2px;
+        border-style: solid;
+        border-color: purple;
+    }
 
+    .listItem {
+        color: black;
+        padding-bottom: 0px;
+    }
+
+    .signup-col {
+        margin: 0px 16px 0px 16px;
+        padding-bottom: 20px;
+    }
+
+    .item-inner {
+        border-bottom-color: #ffffff !important;
+        box-shadow: none !important;
+    }
+
+    .submit-btn {
+        background:color($colors, primary);
+        border: 1px solid #ffffff;
+    }
+
+    .register-btn {
+        color: #ffffff;
+        font-size: 0.8em;
+    }
+
+    .signup-content {
+        background:color($colors, grey);
+    }
 }
+    
