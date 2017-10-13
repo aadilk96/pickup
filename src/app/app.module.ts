@@ -11,11 +11,24 @@ import { CreatePage } from '../pages/create/create';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { GamesPage } from '../pages/games/games';
 import { AchievementsPage } from '../pages/achievements/achievements';
-
 import { TabsPage } from '../pages/tabs/tabs';
+
+import { AngularFireModule } from "angularfire2";
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AuthProvider } from '../providers/auth/auth';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyBmWolHQJFsC7M3f9cFb6fX_YziiymNFXo",
+  authDomain: "pickup-66de4.firebaseapp.com",
+  databaseURL: "https://pickup-66de4.firebaseio.com",
+  projectId: "pickup-66de4",
+  storageBucket: "pickup-66de4.appspot.com",
+  messagingSenderId: "713680790426"
+};
 
 @NgModule({
   declarations: [
@@ -32,7 +45,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,9 +64,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AchievementsPage
   ],
   providers: [
+    AuthProvider,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider
   ]
 })
 export class AppModule {}
