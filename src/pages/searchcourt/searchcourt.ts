@@ -30,8 +30,12 @@ export class SearchCourtPage {
   initializeItems() {
     // TODO replace with real data from the database
     this.items = [
-      'Amsterdam',
-      'Bogota'
+      'UPC Campus',
+      'Cancha de Balencesto',
+      'Escola de Basquet Roser',
+      'Parc del Clot',
+      'Basket Heron',
+      'Basket Llor'
     ];
   }
 
