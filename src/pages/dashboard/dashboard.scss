@@ -13,4 +13,10 @@ page-dashboard {
         color:color($colors, primary);
     }
 
+    #fixedbutton {
+        position: fixed;
+        bottom: 80px;
+        right: 25px; 
+    }
+
 }
