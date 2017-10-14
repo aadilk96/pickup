@@ -1,0 +1,112 @@
+{
+    "user1": {
+        "first_name": "Alex",
+        "last_name": "Maiereanu",
+        "email": "amaiereanu@gmail.com",
+        "display_name": "Alex Maiereanu",
+        "birthday": "1996-06-14",
+        "joined_date": "2017-07-07",
+        "games_played": 30,
+        "list_courts": ["court1", "court2", "court3"],
+        "number_courts": 3
+    },
+    "user2": {
+        "first_name": "Tudor",
+        "last_name": "Maiereanu",
+        "email": "tudormaiereanu@gmail.com",
+        "display_name": "Tudor Maiereanu",
+        "birthday": "1997-09-09",
+        "joined_date": "2017-06-07",
+        "games_played": 40,
+        "list_courts": ["court1", "court2", "court4", "court5"],
+        "number_courts": 4
+    },
+    "user3": {
+        "first_name": "Steven",
+        "last_name": "Abreu",
+        "email": "stevenabreu7@gmail.com",
+        "display_name": "Steven Abreu",
+        "birthday": "1996-07-24",
+        "joined_date": "2016-07-07",
+        "games_played": 35,
+        "list_courts": ["court1", "court5"],
+        "number_courts": 2
+    },
+    "user4": {
+        "first_name": "Aadil",
+        "last_name": "Kumar",
+        "email": "amaiereanu@gmail.com",
+        "display_name": "Aadil Kumar",
+        "birthday": "1996-03-04",
+        "joined_date": "2015-07-02",
+        "games_played": 30,
+        "list_courts": ["court2", "court3", "court4", "court5"],
+        "number_courts": 4
+    },
+    "user5": {
+        "first_name": "George",
+        "last_name": "Maiereanu",
+        "email": "a.maiereanu@jacobs-university.de",
+        "display_name": "George Maiereanu",
+        "birthday": "1996-06-14",
+        "joined_date": "2017-06-02",
+        "games_played": 20,
+        "list_courts": ["court1", "court2", "court3", "court4", "court5"],
+        "number_courts": 5
+    },
+    "user6": {
+        "first_name": "Cristian",
+        "last_name": "Maiereanu",
+        "email": "t.maiereanu@jacobs-university.de",
+        "display_name": "Cristian Maiereanu",
+        "birthday": "1997-09-09",
+        "joined_date": "2017-08-07",
+        "games_played": 10,
+        "list_courts": ["court1"],
+        "number_courts": 1
+    },
+    "user7": {
+        "first_name": "Jim",
+        "last_name": "Doe",
+        "email": "jim.doe@gmail.com",
+        "display_name": "Jim Doe",
+        "birthday": "1994-01-04",
+        "joined_date": "2017-03-01",
+        "games_played": 15,
+        "list_courts": ["court1", "court3", "court4", "court5"],
+        "number_courts": 4
+    },
+    "user8": {
+        "first_name": "Tony",
+        "last_name": "Bennet",
+        "email": "t.bennet@gmail.com",
+        "display_name": "Tony Bennet",
+        "birthday": "1998-10-24",
+        "joined_date": "2016-07-07",
+        "games_played": 3,
+        "list_courts": ["court4", "court5"],
+        "number_courts": 2
+    },
+    "user9": {
+        "first_name": "Bon",
+        "last_name": "Scott",
+        "email": "b.scott@gmail.com",
+        "display_name": "Bon Scott",
+        "birthday": "1995-02-17",
+        "joined_date": "2014-09-07",
+        "games_played": 13,
+        "list_courts": ["court1", "court3"],
+        "number_courts": 2
+    },
+    "user10": {
+        "first_name": "Fifi",
+        "last_name": "Fufu",
+        "email": "fifi.fufu@gmail.com",
+        "display_name": "Fifi Fufu",
+        "birthday": "1994-02-04",
+        "joined_date": "2017-10-07",
+        "games_played": 80,
+        "list_courts": ["court1", "court2", "court3", "court4", "court5"],
+        "number_courts": 5
+    }
+}
