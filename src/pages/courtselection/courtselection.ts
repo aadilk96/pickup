@@ -9,8 +9,10 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'courtselection.html',
 })
 export class CourtSelectionPage {
+  address = ''
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+    this.address = navParams.get('address');
   }
 
   confirmGame() {
