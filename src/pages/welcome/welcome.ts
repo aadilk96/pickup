@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth/auth';
 import { LoginPage } from '../login/login';
 import { SignupPage } from '../signup/signup';
+import { TabsPage } from '../tabs/tabs';
 
 @IonicPage()
 @Component({
@@ -28,10 +30,15 @@ export class WelcomePage {
     }
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthProvider) {
   }
 
   ionViewDidLoad() {
+    this.auth.onAuthChanged(user => {
+      if (user != null) {
+        this.navCtrl.setRoot(TabsPage);
+      }
+    })
   }
 
   gotologin() {

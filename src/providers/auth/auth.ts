@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 export class AuthProvider {
 
   constructor(private auth: AngularFireAuth) {
-    this.auth.auth.signOut();
+    
   }
 
   // takes email, password and display name
