@@ -9,49 +9,48 @@
   <ion-navbar>
     <ion-title>Games</ion-title>
   </ion-navbar>
-  <div padding>
-      <ion-segment [(ngModel)]="game">
-        <ion-segment-button value="Old Games">
-          Old Games
-        </ion-segment-button>
-        <ion-segment-button value="Search">
-          Search
-        </ion-segment-button>
-        <ion-segment-button value="Map">
-          Map
-        </ion-segment-button>
-      </ion-segment>
-    </div>
-    
-    <div [ngSwitch]="game">
-      <ion-list *ngSwitchCase="'Search'">
-          <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-          <ion-list>
-            <ion-item *ngFor="let item of items">
-              {{ search }}
-            </ion-item>
-          </ion-list>
-      </ion-list>
-    
-      <ion-list *ngSwitchCase="'Old Games'">
-          <ion-list>
-              <button ion-item *ngFor="let item of items">
-                {{ item.text }}
-              </button>  
-            </ion-list>
-      </ion-list>
-      <ion-list *ngSwitchCase="'Map'">
-        <ion-buttons end>
-           <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Add Marker</button>
-        </ion-buttons>
-      </ion-list>
-      <ion-content>
-          <div #map id="map"></div> 
-        </ion-content>
-    </div>
 </ion-header>
 
 
 <ion-content padding>
-
+  <div padding>
+    <ion-segment [(ngModel)]="game">
+      <ion-segment-button value="Old Games">
+        Old Games
+      </ion-segment-button>
+      <ion-segment-button value="Search">
+        Search
+      </ion-segment-button>
+      <ion-segment-button value="Map">
+        Map
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+    
+  <div [ngSwitch]="game">
+    <ion-list *ngSwitchCase="'Search'">
+        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+        <ion-list>
+          <ion-item *ngFor="let item of items">
+            {{ search }}
+          </ion-item>
+        </ion-list>
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'Old Games'">
+        <ion-list>
+            <button ion-item *ngFor="let item of items">
+              {{ item.text }}
+            </button>  
+          </ion-list>
+    </ion-list>
+    <ion-list *ngSwitchCase="'Map'">
+      <ion-buttons end>
+          <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Add Marker</button>
+      </ion-buttons>
+    </ion-list>
+    <ion-content>
+        <div #map id="map"></div> 
+      </ion-content>
+  </div>
 </ion-content>
