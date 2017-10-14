@@ -28,6 +28,7 @@ import { MockDataProvider } from '../providers/mock-data/mock-data';
 import { DatabaseProvider } from '../providers/database/database';
 
 import { Geolocation } from '@ionic-native/geolocation';
+import { DataProvider } from '../providers/data/data';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBmWolHQJFsC7M3f9cFb6fX_YziiymNFXo",
@@ -85,7 +86,8 @@ export const firebaseConfig = {
     AuthProvider,
     Geolocation,
     MockDataProvider,
-    DatabaseProvider
+    DatabaseProvider,
+    DataProvider
   ]
 })
 export class AppModule {}
