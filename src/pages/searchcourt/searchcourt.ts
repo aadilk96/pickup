@@ -36,7 +36,7 @@ export class SearchCourtPage {
   }
 
   goToCourtSelection(courtName){
-
+      this.navCtrl.push(SearchCourtPage, {"location_name": courtName});
   }
 
   getItems(event: any) {
