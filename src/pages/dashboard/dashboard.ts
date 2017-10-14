@@ -31,7 +31,7 @@ export class DashboardPage {
       console.log(snapshot.val());
       this.user = snapshot.val();
     });
-    var x = this.db.onGetCourtsVisitedByUser('a', null);
+  
   }
 
   logout() {
