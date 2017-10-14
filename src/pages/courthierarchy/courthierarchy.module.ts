@@ -10,4 +10,4 @@ import { CourtHierarchyPage } from './courthierarchy';
     IonicPageModule.forChild(CourtHierarchyPage),
   ],
 })
-export class CourthierarchyPageModule {}
+export class CourtHierarchyPageModule {}
