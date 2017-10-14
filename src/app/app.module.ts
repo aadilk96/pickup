@@ -16,6 +16,7 @@ import { CourtSelectionPage } from '../pages/courtselection/courtselection';
 import { AchievementsPage } from '../pages/achievements/achievements';
 import { TabsPage } from '../pages/tabs/tabs';
 import { CourtHierarchyPage } from '../pages/courthierarchy/courthierarchy'; 
+import { JoinPage } from '../pages/join/join'
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -44,6 +45,7 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     TabsPage,
+    JoinPage,
     LoginPage, 
     SignupPage,
     WelcomePage, 
@@ -68,7 +70,8 @@ export const firebaseConfig = {
   entryComponents: [
     MyApp,
     TabsPage,
-    LoginPage, 
+    LoginPage,
+    JoinPage, 
     SignupPage,
     WelcomePage, 
     FeedPage,
