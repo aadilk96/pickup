@@ -4,7 +4,35 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-slides pager>
+    
+      <ion-slide style="background-color: #f0f0f0">
+          <ion-list >
+              <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+              <ion-list>
+                <ion-item *ngFor="let item of items">
+                  {{ search }}
+                </ion-item>
+              </ion-list>
+          </ion-list>
+      </ion-slide>
+    
+      <ion-slide style="background-color: #f0f0f0">
+          <ion-list>
+              <ion-list>
+                  <button ion-item *ngFor="let item of items">
+                    {{ item.text }}
+                  </button>  
+                </ion-list>
+          </ion-list>
+      </ion-slide>
+    
+      <ion-slide style="background-color: #f0f0f0">
+        <div #map id="map" ></div>
+      </ion-slide>
+    
+    </ion-slides>
+<!-- <ion-content padding>
   <div padding>
     <ion-segment [(ngModel)]="game">
       <ion-segment-button value="Old Games">
@@ -38,8 +66,7 @@
     </ion-list>
 
     <div *ngSwitchCase="'Map'" >
-      
       <div #map id="map" ></div>
     </div>
   </div>
-</ion-content>
+</ion-content> -->
