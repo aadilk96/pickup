@@ -43,4 +43,79 @@ export class DataProvider {
     });
   }
 
+  get_games_played_by_user(uid){
+      var user_json = this.users;
+      return user_json[uid]["games_played"]
+  }
+
+  get_courts_visited_by_user(uid){
+    var user_json = this.users;
+    return user_json[uid]["number_courts"]
+  }
+
+  get_points_for_user(uid){
+    var user_json = this.users;
+    return user_json[uid]["number_courts"] * user_json[uid]["games_played"]
+  }
+
+  get_top_five_players_for_court(court_id) {
+      var visitedcounts = this.visitedcounts
+      var players_counts = visitedcounts[court_id]
+      var items = Object.keys(players_counts).map(function(key) {
+        return [key, players_counts[key]];
+      });
+
+      items.sort(function(first, second) {
+        return second[1] - first[1];
+      });
+    
+      // Create a new array with only the first 5 items
+      return items.slice(0, 5);
+  }
+
+  get_user_info_from_user_is(uid) {
+      var user_json = this.users;
+      return user_json[uid]
+  }
+
+  get_upcoming_events_for_user(uid) {
+      var result = [];
+
+      // Append the events created by the user
+      var games = this.games;
+      for (var i = 0; i < games.length; i++) {
+          if (games[i]["creator"] == uid) {
+            result.push(games[i])
+          }
+      }
+
+      // Append the events which will be attended by the user
+      var events = this.participations;
+      for (var i = 0; i < events.length; i++) {
+          var game_id = events[i];
+          var end_date = new Date(games[game_id]["end_date"])
+          var now = new Date();
+          if (end_date > now) {
+              // The date is in the future, so appent it
+              result.push(games[game_id])
+          }
+      }
+      return result
+  }
+
+  get_all_upcoming_events(uid) {
+    var result = [];
+
+    // Append the events created by the user
+    var games = this.games;
+    for (var i = 0; i < games.length; i++) {
+        var end_date = new Date(games[i]["end_date"])
+        var now = new Date();
+        if (end_date > uid) {
+          result.push(games[i])
+        }
+    }
+    return result
+  }
+
 }
