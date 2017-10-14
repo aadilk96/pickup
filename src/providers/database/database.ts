@@ -9,6 +9,10 @@ export class DatabaseProvider {
     
   }
 
+  onGetUser(uid, x) {
+    this.db.database.ref('/users/' + uid).on('value', snapshot => x(snapshot));
+  }
+
   createUser(userJson) {
     this.db.database.ref('/users/' + userJson.uid).set(userJson);
   }

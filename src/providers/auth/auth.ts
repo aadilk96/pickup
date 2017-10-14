@@ -9,6 +9,10 @@ export class AuthProvider {
     
   }
 
+  getCurrentUserId() {
+    return this.auth.auth.currentUser.uid;
+  }
+
   logout() {
     this.auth.auth.signOut();
   }

@@ -3,16 +3,7 @@ import { IonicPage, NavController, AlertController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { AuthProvider } from '../../providers/auth/auth';
 import { DatabaseProvider } from '../../providers/database/database';
- 
-export class User {
-  firstName: string;
-  lastName: string;
-  displayName: string;
-  email: string;
-  birthday: string;
-  joindate: string;
-  uid: string;
-}
+import { User } from '../../models/user';
 
 @IonicPage()
 @Component({

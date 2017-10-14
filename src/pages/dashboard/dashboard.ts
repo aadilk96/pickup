@@ -1,19 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AuthProvider } from '../../providers/auth/auth';
-import { DatabaseProvider } from '../../providers/database/database';
-import { WelcomePage } from '../welcome/welcome';
+import { IonicPage } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-
-export class User {
-  firstName: string;
-  lastName: string;
-  displayName: string;
-  email: string;
-  birthday: string;
-  joindate: string;
-  uid: string;
-}
+import { DatabaseProvider } from '../../providers/database/database';
+import { AuthProvider } from '../../providers/auth/auth';
+import { User } from '../../models/user';
 
 @IonicPage()
 @Component({
@@ -32,142 +22,59 @@ export class DashboardPage {
     uid: 'wfwf3849f3h'
   }
 
-  constructor(public alertCtrl: AlertController) {
+  constructor(public alertCtrl: AlertController, private db: DatabaseProvider, private auth: AuthProvider) {
+    let userid = this.auth.getCurrentUserId();
+    console.log(userid);
+    this.db.onGetUser(userid, snapshot => {
+      console.log(this.user);
+      console.log(snapshot.val());
+      this.user = snapshot.val();
+    });
   }
 
-  showPromptFirstName() {
+  showInputPrompt(name, placeholder) {
     let prompt = this.alertCtrl.create({
-      title: 'Edit',
+      title: 'Edit ' + placeholder,
       inputs: [
         {
-          name: 'FirstName',
-          placeholder: 'First Name'
+          name: name,
+          placeholder: placeholder
         },
       ],
       buttons: [
         {
           text: 'Cancel',
           handler: data => {
-            console.log('Cancel clicked');
           }
         },
         {
           text: 'Save',
           handler: data => {
-            console.log('Saved clicked');
           }
         }
       ]
     });
     prompt.present();
+  }
+
+  showPromptFirstName() {
+    this.showInputPrompt('FirstName', 'First Name');
   }
 
   showPromptLastName() {
-    let prompt = this.alertCtrl.create({
-      title: 'Edit',
-      inputs: [
-        {
-          name: 'LastName',
-          placeholder: 'Last Name'
-        },
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Save',
-          handler: data => {
-            console.log('Saved clicked');
-          }
-        }
-      ]
-    });
-    prompt.present();
+    this.showInputPrompt('LastName', 'Last Name');
   }
   
   showPromptAge() {
-    let prompt = this.alertCtrl.create({
-      title: 'Edit',
-      inputs: [
-        {
-          name: 'Age',
-          placeholder: 'Age'
-        },
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Save',
-          handler: data => {
-            console.log('Saved clicked');
-          }
-        }
-      ]
-    });
-    prompt.present();
+    this.showInputPrompt('Age', 'Age');
   }
 
   showPromptEmail() {
-    let prompt = this.alertCtrl.create({
-      title: 'Edit',
-      inputs: [
-        {
-          name: 'Email',
-          placeholder: 'Email'
-        },
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Save',
-          handler: data => {
-            console.log('Saved clicked');
-          }
-        }
-      ]
-    });
-    prompt.present();
+    this.showInputPrompt('Email', 'Email');
   }
 
   showPromptPass() {
-    let prompt = this.alertCtrl.create({
-      title: 'Edit',
-      inputs: [
-        {
-          name: 'Pass',
-          placeholder: 'Password'
-        },
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Save',
-          handler: data => {
-            console.log('Saved clicked');
-          }
-        }
-      ]
-    });
-    prompt.present();
+    this.showInputPrompt('Pass', 'Password');
   }
   
 }

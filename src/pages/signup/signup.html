@@ -37,7 +37,7 @@
         </ion-item>
         <ion-item>
             <ion-icon name="mail" item-start></ion-icon>
-            <ion-input [(ngModel)]="email" type="text" placeholder="E-Mail"></ion-input>
+            <ion-input [(ngModel)]="user.email" type="text" placeholder="E-Mail"></ion-input>
         </ion-item>
         <ion-item>
             <ion-icon name="key" item-start></ion-icon>
@@ -49,7 +49,7 @@
         </ion-item>
     </ion-list>
 
-    <button class="login btn" ion-button full (click)="login()">LOG IN</button>
+    <button class="login btn" ion-button full (click)="signup()">SIGN UP</button>
     <p style="text-align: center;">
         By signing up, you agree to our Terms and Conditions and Privacy Policy.
     </p>
