@@ -13,7 +13,7 @@
       <ion-segment-button value="Search">
         Search
       </ion-segment-button>
-      <ion-segment-button (change)="onSegmentChanged($event)" value="Map">
+      <ion-segment-button value="Map">
         Map
       </ion-segment-button>
     </ion-segment>
@@ -37,11 +37,9 @@
           </ion-list>
     </ion-list>
 
-    <div *ngSwitchCase="'Map'">
-      <ion-buttons end>
-          <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Add Marker</button>
-      </ion-buttons>
-      <div #map id="map"></div>
+    <div *ngSwitchCase="'Map'" >
+      
+      <div #map id="map" ></div>
     </div>
   </div>
 </ion-content>
