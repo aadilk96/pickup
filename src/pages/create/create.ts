@@ -15,13 +15,6 @@ import { ViewChild, ElementRef } from '@angular/core';
 
 declare var google;
 
-/**
- * Generated class for the CreatePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-create',
@@ -70,6 +63,7 @@ export class CreatePage {
  
   }
 
+<<<<<<< HEAD
   addCenterMarker(){
     var marker = new google.maps.Marker({
       map: this.map,
@@ -123,4 +117,8 @@ export class CreatePage {
     
    }
 
+=======
+  ionViewDidLoad() {
+  }
+>>>>>>> 8de519d98146eb012a2ed90b74978e9fa00b2506
 }

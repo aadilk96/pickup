@@ -1,18 +1,147 @@
-<!--
-  Generated template for the DashboardPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>dashboard</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding>
+  <button ion-button primary center (click)="logout()">Logout</button>
 
+  <div padding>
+    <ion-segment [(ngModel)]="User">
+      <ion-segment-button value="Account">
+        Account
+      </ion-segment-button>
+      <ion-segment-button value="Activity">
+        Activity
+      </ion-segment-button>
+      <ion-segment-button value="Records">
+        Records
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div [ngSwitch]="User">
+    <ion-list *ngSwitchCase="'Account'">
+      <div class='my_img'>
+          <img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png" />
+      </div>  
+      <ion-card>
+          <ion-fab right bottom>
+              <button ion-fab color="primary"><ion-icon name="create"></ion-icon></button>
+          </ion-fab>
+
+          <ion-list>
+            <button item-start ion-item color="light">
+              First name:
+              <ion-note item-end>
+                {{user.firstName}}
+              </ion-note>
+            </button>
+        
+            <button item-start ion-item color="light">
+              Last name:
+              <ion-note item-end>
+                {{user.lastName}}
+              </ion-note>
+            </button>
+
+            <button item-start ion-item color="light">
+                Birthdate:
+                <ion-note item-end>
+                  {{user.birthday}}
+                </ion-note>
+            </button>
+        
+            <button item-start ion-item color="light">
+              Email:
+              <ion-note item-end>
+                {{user.email}}
+              </ion-note>
+            </button>
+        
+            <button item-start ion-item color="light">
+              Password:
+              <ion-note item-end>
+                *******
+              </ion-note>
+            </button>
+
+          </ion-list>
+        </ion-card>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Activity'">
+
+        <ion-fab right bottom>
+          <button ion-fab color="primary">
+            <ion-icon name="share" >
+            </ion-icon>
+          </button>
+          <ion-fab-list side="top">
+            <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+            <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+            <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+            <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+          </ion-fab-list>
+        </ion-fab>
+
+        <ion-card color="grey">
+          <ion-card-header color="primary">
+                Points:
+          </ion-card-header>
+          <ion-card-content>
+              23
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card color="grey">
+          <ion-card-header color="primary">
+            Games played:
+          </ion-card-header>
+          <ion-card-content>
+            200
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card color="grey">
+          <ion-card-header color="primary">
+              Courts visited:
+          </ion-card-header>
+          <ion-card-content>
+              7
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card color="grey">
+          <ion-card-header color="primary">
+              Respect:
+          </ion-card-header>
+          <ion-card-content>
+              -5
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card color="grey">
+          <ion-card-header color="primary">
+              Niggers:
+          </ion-card-header>
+          <ion-card-content>
+              Too many.
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card color="grey">
+          <ion-card-header color="primary">
+              Bitchz connected:
+            </ion-card-header>
+            <ion-card-content>
+              2
+            </ion-card-content>
+        </ion-card>
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'Records'">
+      <ion-item>
+        <h2>Records</h2>
+      </ion-item>
+      ...
+    </ion-list>
+
+  </div>
 </ion-content>

@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
-
 import { DashboardPage } from '../dashboard/dashboard';
-
 import { FeedPage } from '../feed/feed';
-
 import { AchievementsPage } from '../achievements/achievements'
-
 import { GamesPage } from '../games/games'
-
 import { CreatePage } from '../create/create'
 
 @Component({
@@ -22,6 +17,5 @@ export class TabsPage {
   tab5Root = CreatePage; 
 
   constructor() {
-
   }
 }
