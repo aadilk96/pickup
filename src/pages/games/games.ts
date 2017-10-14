@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-// import { Geolocation } from '@ionic-native/geolocation';
+import { Geolocation } from '@ionic-native/geolocation';
 
 declare var google;
 
@@ -21,9 +21,9 @@ export class GamesPage {
     scaledSize: new google.maps.Size(30, 30), // scaled size
     origin: new google.maps.Point(0, 0), // origin
     anchor: new google.maps.Point(15, 15) // anchor
-};
+  };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public geolocation: Geolocation) {
     this.items = []; 
     for(let i = 10; i >= 1; i--){
       this.items.push({
@@ -66,15 +66,17 @@ export class GamesPage {
   }
 
   loadMap() {
-     let latLng = new google.maps.LatLng(-34.9290, 138.6010);
-  
-     let mapOptions = {
-       center: latLng,
-       zoom: 15,
-       mapTypeId: google.maps.MapTypeId.ROADMAP
-     }
-  
-     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+    this.geolocation.getCurrentPosition().then((position) => {
+      let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    
+      let mapOptions = {
+        center: latLng,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+    
+      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+    });
   }
 
    addMarkerLatLon(lat, lon){
