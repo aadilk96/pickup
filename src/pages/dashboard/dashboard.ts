@@ -11,6 +11,8 @@ import { WelcomePage } from '../welcome/welcome';
 })
 export class DashboardPage {
 
+  User = "Account";
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthProvider, private db: DatabaseProvider) {  
   }
 
