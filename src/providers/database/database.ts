@@ -6,30 +6,73 @@ import 'rxjs/add/operator/map';
 export class DatabaseProvider {
 
   constructor(private db: AngularFireDatabase) {
-    
   }
 
+  /*
+  * GET FUNCTIONS
+  */
+
+  onGetGamesPlayedByUser(uid, x) {
+    this.db.database.ref('/users/' + uid + '/gamesplayed').on('value', s => {
+      x(s.val());
+    });
+  }
+
+  onGetCourtsVisitedByUser(uid, x) {
+    this.db.database.ref('/users/' + uid + '/num_courtsvisited').on('value', s => {
+      x(s.val());
+    });
+  }
+
+  onGetGames(x) {
+    this.db.database.ref('/games/').on('value', s => x(s));
+  }
+  
   onGetUser(uid, x) {
-    this.db.database.ref('/users/' + uid).on('value', snapshot => x(snapshot));
+    this.db.database.ref('/users/' + uid).on('value', s => x(s));
+  }
+
+  onGetGame(gid, x) {
+    this.db.database.ref('/games/' + gid).on('value', s => x(s));
+  }
+
+  onGetCourt(cid, x) {
+    this.db.database.ref('/courts/' + cid).on('value', s => x(s));
+  }
+
+  /*
+  * CREATE FUNCTIONS
+  */
+
+  createGameParticipation(gameId, userId, part) {
+
+  }
+
+  createCourt(courtJson) {
+    var x = this.db.database.ref('/courts/').push(courtJson);
+    x.ref.child('courtId').set(x.key);
   }
 
   createUser(userJson) {
     this.db.database.ref('/users/' + userJson.uid).set(userJson);
   }
 
-  createEvent(eventJson) {
-    // add event to list of events
-    var x = this.db.database.ref('/events/').push(eventJson);
-    x.ref.child('eid').set(x.key);
-    // add event to event creation table
-    var uid = eventJson.uid;
-    this.db.database.ref('/event-creation/' + uid).push({
-      eid: x.key,
-      uid: uid
+  createGame(gameJson) {
+    var x = this.db.database.ref('/games/').push(gameJson);
+    x.ref.child('gameId').set(x.key);
+    // event creation table
+    var uid = gameJson.uid;
+    this.db.database.ref('/game-creation/' + uid).push({
+      gameId: x.key,
+      userId: uid
     });
   }
 
-  deleteEvent(eid) {
-    this.db.database.ref('/events/' + eid).remove();
+  /*
+  * DELETE FUNCTIONS
+  */
+
+  deleteEvent(gid) {
+    this.db.database.ref('/games/' + gid).remove();
   }
 }

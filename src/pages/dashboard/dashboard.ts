@@ -20,7 +20,7 @@ export class DashboardPage {
     email: '',
     birthday: '',
     joindate: '',
-    uid: ''
+    userId: ''
   }
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, private db: DatabaseProvider, private auth: AuthProvider) {
@@ -31,6 +31,7 @@ export class DashboardPage {
       console.log(snapshot.val());
       this.user = snapshot.val();
     });
+    var x = this.db.onGetCourtsVisitedByUser('a', null);
   }
 
   logout() {

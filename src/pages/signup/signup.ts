@@ -19,7 +19,7 @@ export class SignupPage {
     email: "",
     birthday: "",
     joindate: "",
-    uid: ""
+    userId: ""
   }
 
   password = "";
@@ -35,7 +35,7 @@ export class SignupPage {
       this.auth.createEmailAccount(this.user.email, this.password, this.user.displayName);
       this.auth.onAuthChanged(user => {
         if (user != null) {
-          this.user.uid = user.uid;
+          this.user.userId = user.uid;
           this.user.joindate = this.getCurrentDate();
           this.success();
         }
