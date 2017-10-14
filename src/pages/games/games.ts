@@ -36,6 +36,12 @@ export class GamesPage {
     this.loadMap();
   }
 
+  onSegementChanged($event){
+    if ($event == 'map') {
+      this.loadMap();
+    }
+  }
+
   getItems(ev: any) {
     // Reset items back to all of the items
     // this.initializeItems();
