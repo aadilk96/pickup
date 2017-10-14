@@ -1,0 +1,56 @@
+<!--
+  Generated template for the CourtselectionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>Join the game</ion-title>
+      </ion-navbar>
+    
+</ion-header>
+    
+    
+<ion-content padding>
+    <button class="check court" ion-button full (click)="goHierarchy()">Check out the court</button>
+    <ion-list>
+        <ion-item>
+            Arena Barcelona
+        </ion-item>
+    </ion-list>
+    
+    <form name="myForm" novalidate>
+
+        <ion-list>
+            <ion-item>
+              <ion-label>Date</ion-label>
+              <ion-datetime displayFormat="MMM DD YYYY" required>Oct 16, 2017</ion-datetime>
+            </ion-item>
+        
+        
+            <ion-item>
+              <ion-label>Start Time</ion-label>
+              <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" required></ion-datetime>
+            </ion-item>
+          
+            <ion-item>
+                <ion-label>Finish Time</ion-label>
+                <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" required></ion-datetime>
+            </ion-item>
+    
+            <ion-item>
+                <ion-label>Number of players</ion-label>
+                <ion-input type="number" required></ion-input>
+              </ion-item>
+    
+        </ion-list>
+    
+
+    </form>
+        
+        <button class="login btn" ion-button full (click)="confirmGame()">JOIN GAME</button>
+    
+</ion-content>
+    

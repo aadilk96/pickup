@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { JoinPage } from '../join/join'
 
 declare var google;
 
@@ -63,6 +64,10 @@ export class GamesPage {
         return (search.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
+
+  goToJoin() {
+    this.navCtrl.push(JoinPage)
   }
 
   loadMap() {

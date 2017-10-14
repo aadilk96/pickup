@@ -1,16 +1,10 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Games</ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-slides pager>
     
       <ion-slide style="background-color: #f0f0f0">
           <ion-list >
               <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
               <ion-list>
-                <ion-item *ngFor="let item of items">
+                <ion-item *ngFor="let item of items" (click)="goToJoin()">
                   {{ search }}
                 </ion-item>
               </ion-list>
@@ -31,7 +25,7 @@
         <div #map id="map" ></div>
       </ion-slide>
     
-    </ion-slides>
+</ion-slides>
 <!-- <ion-content padding>
   <div padding>
     <ion-segment [(ngModel)]="game">
