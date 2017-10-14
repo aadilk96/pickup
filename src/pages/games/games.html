@@ -44,13 +44,12 @@
             </button>  
           </ion-list>
     </ion-list>
-    <ion-list *ngSwitchCase="'Map'">
+
+    <div *ngSwitchCase="'Map'">
       <ion-buttons end>
           <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Add Marker</button>
       </ion-buttons>
-    </ion-list>
-    <ion-content>
-        <div #map id="map"></div> 
-      </ion-content>
+      <div #map id="map"></div>
+    </div>
   </div>
 </ion-content>
