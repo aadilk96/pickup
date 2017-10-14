@@ -8,19 +8,20 @@
       <h2 class="slide-title" [innerHTML]="slide.title"></h2>
       <p [innerHTML]="slide.description"></p>
     </ion-slide>
+    
     <ion-slide>
       <ion-toolbar>
       </ion-toolbar>
       <img src="assets/logo/logo1.png" class="slide-image"/>
       <h2 class="slide-title">Ready to Play?</h2>
-      <button ion-button large clear icon-end color="secondary" disabled>
+      <button class="login-btn" ion-button large clear icon-end disabled>
         Log In or Sign Up to Continue
       </button>
     </ion-slide>
   </ion-slides>
 
   <div class="buttons-container">
-    <button ion-button full color="secondary" outline (click)="gotologin()">Login</button>
+    <button class="login-btn" ion-button full color="secondary" outline (click)="gotologin()">Login</button>
     <button ion-button full color="dark" (click)="gotosignup()">Sign-Up</button>
   </div>
 </ion-content>
