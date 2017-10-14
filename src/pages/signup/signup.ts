@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import {  IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, AlertController } from 'ionic-angular';
+import { TabsPage } from '../tabs/tabs';
+import { AuthProvider } from '../../providers/auth/auth';
  
 @IonicPage()
 @Component({
@@ -8,19 +10,45 @@ import {  IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SignupPage {
 
-  public firstName: string;
-  public lastName: string;
-  public password: string;
-  public passwordConfirm: string;
-  public email: string;
-  public age: number;
+  firstName = "";
+  lastName = "";
+  password = "";
+  passwordConfirm = "";
+  email = "";
+  age: number;
 
-  signupCredentials = { 
-    firstName: '', 
-    lastName: '', 
-    password: '',
-    passwordConfirm: '', 
-    email: '', 
-    age: 0 
-  };  
+  constructor(public navCtrl: NavController, public alCtrl: AlertController, private auth: AuthProvider) {
+  }
+
+  signup() {
+    var res = this.validate();
+    if (res == '') {
+      this.auth.createEmailAccount(this.email, this.password, this.firstName + ' ' + this.lastName);
+      this.auth.onAuthChanged(user => {
+        if (user != null) {
+          this.success();
+        }
+      })
+    } else {
+      this.alCtrl.create({title: res, buttons: ['OK']}).present();
+    }
+  }
+
+  success() {
+    this.navCtrl.push(TabsPage);
+  }
+
+  validate() {
+    if (this.age == null) {
+      return "Please enter your age.";
+    } else if (this.password != this.passwordConfirm) { 
+      return "Passwords don't match.";
+    } else if (this.password.length < 6) {
+      return "Password too short.";
+    // } else if (/\S+@\S+\.\S+/.test(this.email)) {
+    //   return "Invalid Email address.";
+    } else {
+      return '';
+    }
+  }
 } 

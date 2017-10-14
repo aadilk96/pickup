@@ -25,7 +25,6 @@ export class AuthProvider {
         user.updateProfile({displayName: name, photoURL: ""}).then(a => {
           // send email verification
           user.sendEmailVerification();
-          return null;
         });
       }
     })
