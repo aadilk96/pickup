@@ -63,7 +63,6 @@ export class CreatePage {
  
   }
 
-<<<<<<< HEAD
   addCenterMarker(){
     var marker = new google.maps.Marker({
       map: this.map,
@@ -117,8 +116,4 @@ export class CreatePage {
     
    }
 
-=======
-  ionViewDidLoad() {
-  }
->>>>>>> 8de519d98146eb012a2ed90b74978e9fa00b2506
 }
