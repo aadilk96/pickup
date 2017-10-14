@@ -95,8 +95,11 @@ export class MapCourtsPage {
       icon: this.image_basketball
     });
 
-    marker.addListener("dblclick", function() {
+    marker.addListener("dblclick", () => {
       marker.setMap(null);
+    });      
+    marker.addListener("click", () => {
+      this.goToCourt(event);
     });       
 
     this.addInfoWindow(marker, event);
@@ -109,28 +112,25 @@ export class MapCourtsPage {
 
     goHierarchy(){
       this.navCtrl.push(CourtHierarchyPage)
-      
     }
 
     goToCourt(event) {
-        this.navCtrl.push(LoginPage)
         var geocoder = new google.maps.Geocoder();
         geocoder.geocode({
           'latLng': event.latLng
-        }, function(results, status) {
+        }, (results, status) => {
           if (status == google.maps.GeocoderStatus.OK) {
             if (results[0]) {
               this.navCtrl.push(CourtSelectionPage, {address: results[0].formatted_address});
             }
           }
         });
-
-        this.navCtrl.push(SearchCourtPage, {'address': 'nimic'});
+        // this.navCtrl.push(SearchCourtPage, {'address': 'nimic'});
     }
 
     addInfoWindow(marker, event){
         google.maps.event.addListener(marker, 'click', () => {
-          var content="<input type='button' name='pick_location' value='Play here!' onclick='goToCourt("+event+")'>";
+          var content="Play here!";
           var infoWindow = new google.maps.InfoWindow();  
           infoWindow.setContent(content);
           infoWindow.open(this.map, marker);
