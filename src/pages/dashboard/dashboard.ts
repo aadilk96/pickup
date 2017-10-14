@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
+import { WelcomePage } from '../welcome/welcome';
 import { DatabaseProvider } from '../../providers/database/database';
 import { AuthProvider } from '../../providers/auth/auth';
 import { User } from '../../models/user';
@@ -13,16 +14,16 @@ import { User } from '../../models/user';
 export class DashboardPage {
   User = "Account";
   user: User = {
-    firstName: 'adolf',
-    lastName: 'hitler',
-    displayName: 'nazi001',
-    email: 'nazi@germany.de',
-    birthday: '01/01/1909',
-    joindate: '10/10/2017',
-    uid: 'wfwf3849f3h'
+    firstName: '',
+    lastName: '',
+    displayName: '',
+    email: '',
+    birthday: '',
+    joindate: '',
+    uid: ''
   }
 
-  constructor(public alertCtrl: AlertController, private db: DatabaseProvider, private auth: AuthProvider) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private db: DatabaseProvider, private auth: AuthProvider) {
     let userid = this.auth.getCurrentUserId();
     console.log(userid);
     this.db.onGetUser(userid, snapshot => {
@@ -30,6 +31,11 @@ export class DashboardPage {
       console.log(snapshot.val());
       this.user = snapshot.val();
     });
+  }
+
+  logout() {
+    this.navCtrl.setRoot(WelcomePage);
+    this.auth.logout();
   }
 
   showInputPrompt(name, placeholder) {
