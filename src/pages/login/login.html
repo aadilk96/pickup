@@ -4,18 +4,54 @@
 </ion-header>
 
 <ion-content class="login-content" padding>
+
+    <h2>PickUp</h2>
+
+    <img class="logo" src="assets/logo/logo1.png">
+
+    <button full ion-button icon-left color="facebook">
+        <ion-icon name="logo-facebook"></ion-icon>
+        Sign in with Facebook
+    </button>
+    <button full ion-button icon-left color="google">
+        <ion-icon name="logo-google"></ion-icon>
+        Sign in with Google
+    </button>
+
+    <div class="or_label">
+        <ion-label>OR</ion-label>
+    </div>
+
+    <ion-list no-lines class="input-container">
+        <ion-item>
+            <ion-icon name="mail" item-start></ion-icon>
+            <ion-input [(ngModel)]="email" type="text" placeholder="E-Mail"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="key" item-start></ion-icon>
+            <ion-input [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
+        </ion-item>
+    </ion-list>
+    <button class="login btn" ion-button full (click)="login()">LOG IN</button>
+
+    <button style="margin-top: 20px;" full clear small ion-button (click)="forgotPassword()">Forgot your password?</button>
     
-    <ion-card>
+    <!-- <ion-card>
       <ion-row>
         <ion-col>
+            <h1>
+                <ion-icon name="logo-facebook"></ion-icon>
+            </h1>
             <img src="https://www.seeklogo.net/wp-content/uploads/2016/09/facebook-icon-preview-400x400.png" 
             alt="fb_image" >
         </ion-col>
-        <ion-col>  
+        <ion-col>
+            <ion-icon name="logo-twitter"></ion-icon>  
             <img src="http://pngimg.com/uploads/twitter/twitter_PNG28.png"
             alt="fb_image" >
         </ion-col>
         <ion-col>  
+            <ion-icon name="logo-google"></ion-icon>
             <img src="https://maxcdn.icons8.com/Share/icon/color/Logos//google_plus1600.png"
             alt="fb_image">
         </ion-col>
@@ -46,5 +82,5 @@
 
     <ion-item class="submit-button" (click)="login()">
           Log In
-    </ion-item>
+    </ion-item> -->
 </ion-content>
