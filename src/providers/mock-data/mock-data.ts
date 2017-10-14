@@ -44,7 +44,7 @@ export class MockDataProvider {
   slides = [{
       title: "Welcome to PickUp!",
       description: "Find, Compete, <b>Rule</b>",
-      image: "assets/logo/logo1.png"
+      image: "http://i.turner.ncaa.com/ncaa/big/2017/01/24/1163395/1485279891621-MONK_1920.jpg-1163395.300x168.jpg"
     },
     {
       title: "What is PickUp?",
