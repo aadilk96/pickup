@@ -18,7 +18,18 @@ import { AlertController } from 'ionic-angular';
 })
 export class JoinPage {
 
+  details = {
+    date: '2017-10-17',
+    start_time: '18:30',
+    finish_time: '20:30',
+    players: '4'
+  }
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+    this.details.date = '2017-10-17';
+    this.details.start_time = '18:30';
+    this.details.finish_time = '20:30';
+    this.details.players=  '4';
   }
 
   ionViewDidLoad() {
@@ -36,8 +47,8 @@ export class JoinPage {
 
   confirmGame() {
     const alert = this.alertCtrl.create({
-      title: 'Confirm game',
-      message: 'Are you sure you want to create the game??',
+      title: 'Confirm join',
+      message: 'Are you sure you want to join the game??',
       buttons: [
         {
           text: 'Cancel',
@@ -47,9 +58,9 @@ export class JoinPage {
           }
         },
         {
-          text: 'Create',
+          text: 'Join',
           handler: () => {
-            console.log('Game created');
+            console.log('Game joined');
             this.goHome();
           }
         }

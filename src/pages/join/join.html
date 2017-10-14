@@ -21,34 +21,28 @@
         </ion-item>
     </ion-list>
     
-    <form name="myForm" novalidate>
 
         <ion-list>
             <ion-item>
-              <ion-label>Date</ion-label>
-              <ion-datetime displayFormat="MMM DD YYYY" required>Oct 16, 2017</ion-datetime>
+              {{ details.date | date }}
             </ion-item>
         
         
             <ion-item>
-              <ion-label>Start Time</ion-label>
-              <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" required></ion-datetime>
+              Start time: {{ details.start_time }}
             </ion-item>
           
             <ion-item>
-                <ion-label>Finish Time</ion-label>
-                <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" required></ion-datetime>
+                Finish time: {{ details.finish_time }}
             </ion-item>
     
             <ion-item>
-                <ion-label>Number of players</ion-label>
-                <ion-input type="number" required></ion-input>
+                {{details.players}} players
               </ion-item>
     
         </ion-list>
     
 
-    </form>
         
         <button class="login btn" ion-button full (click)="confirmGame()">JOIN GAME</button>
     
