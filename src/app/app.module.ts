@@ -11,6 +11,7 @@ import { MapCourtsPage } from '../pages/mapcourts/mapcourts';
 import { SearchCourtPage } from '../pages/searchcourt/searchcourt';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { GamesPage } from '../pages/games/games';
+import { CourtSelectionPage } from '../pages/courtselection/courtselection';
 import { AchievementsPage } from '../pages/achievements/achievements';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -48,7 +49,8 @@ export const firebaseConfig = {
     DashboardPage,
     GamesPage,
     AchievementsPage,
-    SearchCourtPage
+    SearchCourtPage,
+    CourtSelectionPage
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,8 @@ export const firebaseConfig = {
     DashboardPage,
     GamesPage,
     AchievementsPage,
-    SearchCourtPage
+    SearchCourtPage,
+    CourtSelectionPage
   ],
   providers: [
     AuthProvider,
