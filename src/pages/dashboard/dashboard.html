@@ -1,0 +1,177 @@
+<ion-content padding>
+  <div padding>
+    <ion-segment [(ngModel)]="User">
+      <ion-segment-button value="Account">
+        Account
+      </ion-segment-button>
+      <ion-segment-button value="Info">
+        Info
+      </ion-segment-button>
+      <ion-segment-button value="Records">
+        Records
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div [ngSwitch]="User">
+    <ion-list *ngSwitchCase="'Account'">
+      <div class='my_img'>
+          <img src="https://scontent-mad1-1.xx.fbcdn.net/v/t1.0-9/14067588_1053323344716163_6095047828694861976_n.jpg?oh=670a290fd6e87caa276f5c313e92e95a&oe=5A7C5E08" />
+      </div>  
+      <ion-card>
+          <ion-fab right bottom id="fixedbutton">
+              <button ion-fab color="primary"><ion-icon name="camera"></ion-icon></button>
+          </ion-fab>
+
+            <button item-start ion-item color="light" (click)="showPromptFirstName()">
+              First name:
+              <ion-note item-end>
+                {{user.firstName}}
+              </ion-note>
+            </button>
+        
+            <button item-start ion-item color="light" (click)="showPromptLastName()">
+              Last name:
+              <ion-note item-end>
+                {{user.lastName}}
+              </ion-note>
+            </button>
+
+            <button item-start ion-item color="light" (click)="showPromptAge()">
+                Birthdate:
+                <ion-note item-end>
+                  {{user.birthday}}
+                </ion-note>
+            </button>
+        
+            <button item-start ion-item color="light" (click)="showPromptEmail()">
+              Email:
+              <ion-note item-end>
+                {{user.email}}
+              </ion-note>
+            </button>
+        
+            <button item-start ion-item color="light" (click)="showPromptPass()">
+              Password:
+              <ion-note item-end>
+                *******
+              </ion-note>
+            </button>
+        </ion-card>
+        <button ion-button full (click)="logout()">Log Out</button>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Info'">
+
+        <ion-fab right bottom  id="fixedbutton">
+          <button ion-fab color="primary">
+            <ion-icon name="share">
+            </ion-icon>
+          </button>
+          <ion-fab-list side="bottom">
+            <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+            <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+            <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+            <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+          </ion-fab-list>
+        </ion-fab>
+
+        <ion-card color="grey">
+          <ion-card-header color="primary">
+                Points:
+          </ion-card-header>
+          <ion-card-content>
+              230
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card color="grey">
+          <ion-card-header color="primary">
+            Games played:
+          </ion-card-header>
+          <ion-card-content>
+            135
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card color="grey">
+          <ion-card-header color="primary">
+              Courts visited:
+          </ion-card-header>
+          <ion-card-content>
+              7
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card color="grey">
+            <ion-card-header color="primary">
+                Hours played:
+            </ion-card-header>
+            <ion-card-content>
+                70
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card color="grey">
+            <ion-card-header color="primary">
+                Joined since:
+            </ion-card-header>
+            <ion-card-content>
+                15.10.2017
+            </ion-card-content>
+        </ion-card>
+
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'Records'">
+
+
+    <button ion-button full color="grey">Upcoming</button>
+
+    
+      <ion-scroll scrollY="true" style="height:150px;">
+        <ion-item>
+            <h3>Pick up at:</h3>
+            <p>13:00 - October 14th</p>
+            <p>UPC Campus</p>
+            <ion-icon name="basketball" color="basket" text-align=left item-start></ion-icon>
+        </ion-item>
+        <ion-item>
+            <h3>Pick up at:</h3>
+            <p>19:00 - October 14th</p>
+            <p>Cancha De Baloncesto Del Penyafort</p>
+            <ion-icon name="basketball" color="basket" text-align=left item-start></ion-icon>
+        </ion-item>
+        <ion-item>
+            <h3>Pick up at:</h3>
+            <p>20:00 - October 15th</p>
+            <p>Escola de Basquet Roser</p>
+            <ion-icon name="basketball" color="basket" text-align=left item-start></ion-icon>
+        </ion-item>
+      </ion-scroll>
+
+      <button ion-button full color="grey">Previous</button>
+      <ion-scroll scrollY="true" style="height:150px;">
+          <ion-item>
+              <h3>You played at:</h3>
+              <p>10:00 - October 10th</p>
+              <p>Cancha de Baloncesto Parc del Clot</p>
+              <ion-icon name="checkmark" color="primary" text-align=left item-start></ion-icon>
+          </ion-item>
+          <ion-item>
+              <h3>You played at:</h3>
+              <p>17:00 - October 5th</p>
+              <p>Basket Heron</p>
+              <ion-icon name="checkmark" color="primary" text-align=left item-start></ion-icon>
+          </ion-item>
+          <ion-item>
+              <h3>You played at:</h3>
+              <p>22:00 - October 2nd</p>
+              <p>Basket Llor</p>
+              <ion-icon name="checkmark" color="primary" text-align=left item-start></ion-icon>
+          </ion-item>
+      </ion-scroll>
+    </ion-list>
+
+  </div>
+</ion-content>

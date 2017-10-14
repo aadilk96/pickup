@@ -1,0 +1,51 @@
+page-feed {
+    
+    ion-item {
+        font-size: 100%;
+        border: 2px;
+        border-style: solid;
+        border-color: purple;
+    }
+
+    .listItem {
+        color: black;
+        padding-bottom: 0px;
+    }
+
+    .signup-col {
+        margin: 0px 16px 0px 16px;
+        padding-bottom: 20px;
+    }
+
+    .item-inner {
+        border-bottom-color: #ffffff !important;
+        box-shadow: none !important;
+    }
+
+    .register-btn {
+        color: #ffffff;
+        font-size: 0.8em;
+    }
+
+    .signup-content {
+        background:color($colors, grey);
+    }
+
+    .or_label {
+        position: relative;
+        left: 50%;
+        color:color($colors, background)
+    }
+
+    .submit-button {
+        margin-block-start: 30px;
+        background:color($colors, background);
+        color:color($colors, primary);
+        border: 2px;
+        border-color: color($colors, primary);
+        border-style: solid;
+        text-align: center;
+        font-weight: bold
+    }
+}
+    

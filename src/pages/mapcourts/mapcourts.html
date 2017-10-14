@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar>
+      <ion-buttons front>
+          <button ion-button (click)="addCenterMarker()">Pick location</button>
+      </ion-buttons>
+
+      <ion-buttons end>
+        <button ion-button (click)="goCourt()">Search</button>
+      </ion-buttons> 
+
+    </ion-navbar>
+  </ion-header>
+   
+  <ion-content>
+    <div #map id="map"></div> 
+  </ion-content>

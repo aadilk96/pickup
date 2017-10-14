@@ -1,0 +1,22 @@
+page-dashboard {
+    .my_img {
+        margin: 0 auto;
+        width:50%;
+    }
+
+    .mybutton{
+        background:color($colors, grey);
+        margin: 1px 1px 1px 1px
+    }
+
+    .mycard{
+        color:color($colors, primary);
+    }
+
+    #fixedbutton {
+        position: fixed;
+        top: 100px;
+        right: 25px; 
+    }
+    
+}
