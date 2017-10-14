@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the WelcomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AuthProvider } from '../../providers/auth/auth';
+import { MockDataProvider } from '../../providers/mock-data/mock-data';
+import { LoginPage } from '../login/login';
+import { SignupPage } from '../signup/signup';
+import { TabsPage } from '../tabs/tabs';
 
 @IonicPage()
 @Component({
@@ -15,11 +13,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class WelcomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  slides = [];
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthProvider, private mdp: MockDataProvider) {
+  }
+  
   ionViewDidLoad() {
-    console.log('ionViewDidLoad WelcomePage');
+    this.slides = this.mdp.getSlides();
+    this.auth.onAuthChanged(user => {
+      if (user != null) {
+        this.navCtrl.setRoot(TabsPage);
+      }
+    })
   }
 
+  gotologin() {
+    this.navCtrl.push(LoginPage);
+  }
+
+  gotosignup() {
+    this.navCtrl.push(SignupPage);
+  }
 }

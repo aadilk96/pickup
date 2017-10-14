@@ -19,7 +19,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
 import { AuthProvider } from '../providers/auth/auth';
+import { MockDataProvider } from '../providers/mock-data/mock-data';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBmWolHQJFsC7M3f9cFb6fX_YziiymNFXo",
@@ -68,7 +70,8 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider
+    AuthProvider,
+    MockDataProvider
   ]
 })
 export class AppModule {}

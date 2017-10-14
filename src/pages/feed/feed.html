@@ -1,53 +1,9 @@
-<ion-content class="signup-content" padding>
-  <form (ngSubmit)="login()" #registerForm="ngForm">
-    <ion-list>
-
-      <ion-card>
-        <ion-item>
-          <ion-label color="primary" floating>First Name</ion-label>
-          <ion-input type="text" name="firstName" [(ngModel)]="firstName" required></ion-input>  
-        </ion-item>
-        
-      </ion-card>
-      
-      <ion-card>  
-        <ion-item>
-            <ion-label color="primary" floating>Last Name</ion-label>
-            <ion-input type="text" name="lastName" [(ngModel)]="lastName" required></ion-input>
-        </ion-item>
-      </ion-card>
-
-      <ion-card>
-        <ion-item>
-            <ion-label color="primary" floating>Email</ion-label>
-            <ion-input type="email" name="email" [(ngModel)]="email" required></ion-input>
-        </ion-item>
-      </ion-card>
-      
-      <ion-card>
-        <ion-item>
-            <ion-label color="primary" floating>Age</ion-label>
-            <ion-input type="number" name="age" [(ngModel)]="age" required></ion-input>
-        </ion-item>
-      </ion-card>
-
-      <ion-card>
-        <ion-item>
-            <ion-label color="primary" floating>Password</ion-label>
-            <ion-input type="password" name="password" [(ngModel)]="password" required></ion-input>
-        </ion-item>
-      </ion-card>
-
-      <ion-card>
-          <ion-item>
-              <ion-label color="primary" floating>Confirm password</ion-label>
-              <ion-input type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" required></ion-input>
-          </ion-item>
-      </ion-card>
-      
-    </ion-list>
+<ion-header>    
+    <ion-navbar>
+        <ion-title>Feed</ion-title>
+    </ion-navbar>
+</ion-header>
     
-    </form>
+<ion-content padding>
 
-    <button ion-button color="primary" clear>Sign Up</button>
-  </ion-content>
+</ion-content>

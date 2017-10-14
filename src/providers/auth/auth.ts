@@ -6,6 +6,11 @@ import 'rxjs/add/operator/map';
 export class AuthProvider {
 
   constructor(private auth: AngularFireAuth) {
+    
+  }
+
+  logout() {
+    this.auth.auth.signOut();
   }
 
   // takes email, password and display name
@@ -25,7 +30,6 @@ export class AuthProvider {
         user.updateProfile({displayName: name, photoURL: ""}).then(a => {
           // send email verification
           user.sendEmailVerification();
-          return null;
         });
       }
     })
@@ -35,11 +39,10 @@ export class AuthProvider {
   // returns null if succeeded
   // returns error if failed (check error.message, error.code)
   // call the function onauthchanged to handle event when user gets authorized
-  signInEmail(email, password) {
+  signInEmail(email, password, handleError) {
     // try to login
     this.auth.auth.signInWithEmailAndPassword(email, password).catch(error => {
-      console.error(error.message);
-      return error;
+      handleError(error.message);
     })
   }
 
