@@ -63,6 +63,10 @@ export class CreatePage {
  
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3b30cd81a99a831190e551b420ef5acac3b6fb57
   addCenterMarker(){
     var marker = new google.maps.Marker({
       map: this.map,

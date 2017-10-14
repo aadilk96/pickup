@@ -1,51 +1,49 @@
 page-login {
-    
-    ion-item {
-        font-size: 100%;
-        border: 2px;
-        border-style: solid;
-        border-color: purple;
+
+    .logo {
+        margin-top: 0px;
+        width: 50vw; 
+        max-width: 150px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
     }
 
-    .listItem {
-        color: black;
-        padding-bottom: 0px;
+    h2 {
+        font-family: "BebasNeue";
+        font-size: 5em;
+        margin-top: 0px !important;
+        margin-bottom: -20px;
     }
 
-    .signup-col {
-        margin: 0px 16px 0px 16px;
-        padding-bottom: 20px;
+    h2, h4 {
+        text-align: center;
+        color: color($colors, primary, base);
     }
 
-    .item-inner {
-        border-bottom-color: #ffffff !important;
-        box-shadow: none !important;
+    h4 {
+        margin-bottom:40px;
     }
 
-    .register-btn {
-        color: #ffffff;
-        font-size: 0.8em;
+    .login.btn {
+        margin-bottom: 20px;
     }
 
-    .login-content {
-        background:color($colors, grey);
+    .input-container {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .or_label {
         position: relative;
         left: 50%;
-        color:color($colors, background)
+        color:color($colors, background);
     }
 
-    .submit-button {
-        margin-block-start: 30px;
-        background:color($colors, background);
-        color:color($colors, primary);
-        border: 2px;
-        border-color: color($colors, primary);
-        border-style: solid;
-        text-align: center;
-        font-weight: bold
+    .login-content {
+        background:color($colors, grey);
     }
 }
     
