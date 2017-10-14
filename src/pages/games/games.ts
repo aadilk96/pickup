@@ -23,20 +23,9 @@ export class GamesPage {
     origin: new google.maps.Point(0, 0), // origin
     anchor: new google.maps.Point(15, 15) // anchor
   };
+  allitems = ["Cancha de Basquet Carmen", "Cancha de Basquet Oscar", "Cancha de Basquet", "Cancha de Basquet Menorca","Barceloneta"];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public geolocation: Geolocation) {
-    this.items = []; 
-    for(let i = 10; i >= 1; i--){
-      this.items.push({
-        text: "Game " + i, 
-        id: i,
-      });
-    }
-
-    this.search = [
-      'Amsterdam',
-      'Bogota'
-    ];
   }
 
   ionViewDidLoad(): void {
@@ -60,9 +49,9 @@ export class GamesPage {
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.search = this.search.filter((search) => {
+      this.items = this.allitems.filter((search) => {
         return (search.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
+      });
     }
   }
 
