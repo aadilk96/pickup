@@ -14,6 +14,11 @@ export class LoginPage {
   public email: string;
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, private auth: AuthProvider) {
+    
+  }
+
+  forgotPassword() {
+    // this.auth.forgotPassword();
   }
   
   login() {
