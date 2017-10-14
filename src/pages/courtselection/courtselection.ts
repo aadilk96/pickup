@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MapCourtsPage } from '../mapcourts/mapcourts'
 import { AlertController } from 'ionic-angular';
+import { CourtHierarchyPage } from '../courthierarchy/courthierarchy'
 
 @IonicPage()
 @Component({
@@ -37,6 +38,11 @@ export class CourtSelectionPage {
       ]
     });
     alert.present();
+  }
+
+  goHierarchy(){
+    this.navCtrl.push(CourtHierarchyPage)
+    
   }
 
   goHome(){
