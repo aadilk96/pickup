@@ -15,12 +15,11 @@ import { CourtSelectionPage } from '../courtselection/courtselection'
   templateUrl: 'searchcourt.html',
 })
 export class SearchCourtPage {
-  court_address = ''
+  address = ''
   searchQuery: string = '';
   items: string[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.court_address = navParams.get("address");
     this.initializeItems();
   }
 
@@ -36,8 +35,8 @@ export class SearchCourtPage {
     ];
   }
 
-  goToCourtSelection(courtName){
-      this.navCtrl.push(CourtSelectionPage, {"location_name": courtName});
+  goToCourtSelection(item){
+      this.navCtrl.push(CourtSelectionPage, {address: item});
   }
 
   getItems(event: any) {

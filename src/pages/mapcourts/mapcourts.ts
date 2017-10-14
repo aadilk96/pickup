@@ -13,6 +13,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { ViewChild, ElementRef } from '@angular/core';
 import { SearchCourtPage } from '../searchcourt/searchcourt';
+import { CourtSelectionPage } from '../courtselection/courtselection';
 import { CourtHierarchyPage } from '../courthierarchy/courthierarchy'
 import { LoginPage } from '../login/login';
 
@@ -96,49 +97,44 @@ export class MapCourtsPage {
 
     marker.addListener("dblclick", function() {
       marker.setMap(null);
-    });
-
-    let content = "<h4>Set up a game!</h4>";         
+    });       
 
     this.addInfoWindow(marker, event);
    }
 
-   goCourt(){
-    this.navCtrl.push(SearchCourtPage)
-    
-   }
+    goCourt(){
+      this.navCtrl.push(SearchCourtPage)
 
-   goHierarchy(){
-    this.navCtrl.push(CourtHierarchyPage)
-    
-   }
+    }
 
-   goToCourt(event) {
-      this.navCtrl.push(LoginPage)
-      var geocoder = new google.maps.Geocoder();
-      geocoder.geocode({
-        'latLng': event.latLng
-      }, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          if (results[0]) {
-            this.navCtrl.push(SearchCourtPage, {'address': results[0].formatted_address});
+    goHierarchy(){
+      this.navCtrl.push(CourtHierarchyPage)
+      
+    }
+
+    goToCourt(event) {
+        this.navCtrl.push(LoginPage)
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({
+          'latLng': event.latLng
+        }, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+              this.navCtrl.push(CourtSelectionPage, {address: results[0].formatted_address});
+            }
           }
-        }
-      });
+        });
 
-      this.navCtrl.push(SearchCourtPage, {'address': 'nimic'});
-   }
+        this.navCtrl.push(SearchCourtPage, {'address': 'nimic'});
+    }
 
-   addInfoWindow(marker, event){
-    
-     google.maps.event.addListener(marker, 'click', () => {
-
-       var content="<input type='button' name='pick_location' value='Play here!' onclick='goToCourt("+event+")'>";
-       var infoWindow = new google.maps.InfoWindow();  
-       infoWindow.setContent(content);
-       infoWindow.open(this.map, marker);
-     });
-    
-   }
+    addInfoWindow(marker, event){
+        google.maps.event.addListener(marker, 'click', () => {
+          var content="<input type='button' name='pick_location' value='Play here!' onclick='goToCourt("+event+")'>";
+          var infoWindow = new google.maps.InfoWindow();  
+          infoWindow.setContent(content);
+          infoWindow.open(this.map, marker);
+        })
+    }
 
 }
