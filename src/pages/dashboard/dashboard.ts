@@ -88,9 +88,7 @@ export class DashboardPage {
     });
     prompt.present();
   }
-
   
-
   showPromptAge() {
     let prompt = this.alertCtrl.create({
       title: 'Edit',
