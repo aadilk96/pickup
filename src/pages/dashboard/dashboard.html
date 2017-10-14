@@ -26,24 +26,39 @@
           </ion-fab>
 
           <ion-list>
-            <button ion-item color="light"> 
+            <button item-start ion-item color="light">
               First name:
+              <ion-note item-end>
+                {{user.firstName}}
+              </ion-note>
             </button>
         
-            <button ion-item color="light">
+            <button item-start ion-item color="light">
               Last name:
+              <ion-note item-end>
+                {{user.lastName}}
+              </ion-note>
             </button>
 
-            <button ion-item color="light">
-                Age:
-              </button>
-        
-            <button ion-item color="light">
-              Email:
+            <button item-start ion-item color="light">
+                Birthdate:
+                <ion-note item-end>
+                  {{user.birthday}}
+                </ion-note>
             </button>
         
-            <button ion-item color="light">
+            <button item-start ion-item color="light">
+              Email:
+              <ion-note item-end>
+                {{user.email}}
+              </ion-note>
+            </button>
+        
+            <button item-start ion-item color="light">
               Password:
+              <ion-note item-end>
+                *******
+              </ion-note>
             </button>
 
           </ion-list>
