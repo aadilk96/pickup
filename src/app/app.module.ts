@@ -25,6 +25,8 @@ import { AuthProvider } from '../providers/auth/auth';
 import { MockDataProvider } from '../providers/mock-data/mock-data';
 import { DatabaseProvider } from '../providers/database/database';
 
+import { Geolocation } from '@ionic-native/geolocation';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyBmWolHQJFsC7M3f9cFb6fX_YziiymNFXo",
   authDomain: "pickup-66de4.firebaseapp.com",
