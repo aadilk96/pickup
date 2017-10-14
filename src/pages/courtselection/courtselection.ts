@@ -17,8 +17,10 @@ import { AlertController } from 'ionic-angular';
 })
 export class CourtSelectionPage {
   rootPage: any = AchievementsPage;
+  address = ''
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+    this.address = navParams.get('address');
   }
 
   confirmGame() {
