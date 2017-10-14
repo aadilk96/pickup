@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AchievementsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { MockDataProvider } from '../../providers/mock-data/mock-data';
 
 @IonicPage()
 @Component({
@@ -14,28 +8,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'achievements.html',
 })
 export class AchievementsPage {
-  items:any[]; 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.items = []; 
-    for(let i = 1; i <=10; i++){
-      this.items.push({
-        text: "Achievement " + i, 
-        id: i,
-        visible: false
-      });
-    }
+  items: any[];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private mdp: MockDataProvider) {
+    this.items = mdp.getItems();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AchievementsPage');
+    
   }
 
   expand(item) {
-    item.visible = !(item.visible);
-    for (let i = 0; i < 10; i++) {
+    item.expanded = !(item.expanded);
+    for (let i = 0; i < this.items.length; i++) {
       if (this.items[i] != item) {
-        this.items[i].visible = false;
+        this.items[i].expanded = false;
       }
     }
   }
