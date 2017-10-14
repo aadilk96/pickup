@@ -19,6 +19,7 @@ export class GamesPage {
   items: any[]; 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
+  search: any; 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.items = []; 
     for(let i = 10; i >= 1; i--){
