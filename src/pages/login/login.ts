@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, AlertController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, AlertController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { TabsPage } from '../tabs/tabs';
  
@@ -22,7 +22,7 @@ export class LoginPage {
         this.success();
       }
     });
-    var err = this.auth.signInEmail(this.email, this.password, err => {
+    this.auth.signInEmail(this.email, this.password, err => {
       this.alertCtrl.create({title: err, buttons: ['OK']}).present();
     });
   }

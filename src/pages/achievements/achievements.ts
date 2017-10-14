@@ -12,11 +12,10 @@ export class AchievementsPage {
   items: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private mdp: MockDataProvider) {
-    this.items = mdp.getItems();
   }
-
-  ionViewDidLoad() {
-    
+  
+  ionViewDidLoad() { 
+    this.items = this.mdp.getItems();
   }
 
   expand(item) {

@@ -16,10 +16,10 @@ export class WelcomePage {
   slides = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthProvider, private mdp: MockDataProvider) {
-    this.slides = mdp.getSlides();
   }
-
+  
   ionViewDidLoad() {
+    this.slides = this.mdp.getSlides();
     this.auth.onAuthChanged(user => {
       if (user != null) {
         this.navCtrl.setRoot(TabsPage);
