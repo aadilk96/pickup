@@ -7,7 +7,7 @@ import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { FeedPage } from '../pages/feed/feed';
-import { CreatePage } from '../pages/create/create';
+import { MapCourtsPage } from '../pages/mapcourts/mapcourts';
 import { SearchCourtPage } from '../pages/searchcourt/searchcourt';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { GamesPage } from '../pages/games/games';
@@ -44,7 +44,7 @@ export const firebaseConfig = {
     SignupPage,
     WelcomePage, 
     FeedPage,
-    CreatePage,
+    MapCourtsPage,
     DashboardPage,
     GamesPage,
     AchievementsPage,
@@ -65,7 +65,7 @@ export const firebaseConfig = {
     SignupPage,
     WelcomePage, 
     FeedPage,
-    CreatePage,
+    MapCourtsPage,
     DashboardPage,
     GamesPage,
     AchievementsPage,

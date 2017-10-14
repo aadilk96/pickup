@@ -19,10 +19,10 @@ declare var google;
 
 @IonicPage()
 @Component({
-  selector: 'page-create',
-  templateUrl: 'create.html',
+  selector: 'page-mapcourts',
+  templateUrl: 'mapcourts.html',
 })
-export class CreatePage {
+export class MapCourtsPage {
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
@@ -99,17 +99,12 @@ export class CreatePage {
 
     let content = "<h4>Set up a game!</h4>";         
 
-<<<<<<< HEAD
     this.addInfoWindow(marker, event);
-    
    }
 
    goCourt(){
     this.navCtrl.push(SearchCourtPage)
     
-=======
-    this.addInfoWindow(marker, content);    
->>>>>>> b677d0d133bae4ed81da1b9488c403b7f14a52f4
    }
 
    goToCourt(event) {
