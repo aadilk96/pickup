@@ -12,6 +12,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { ViewChild, ElementRef } from '@angular/core';
+import { SearchCourtPage } from '../searchcourt/searchcourt';
+import { LoginPage } from '../login/login';
 
 declare var google;
 
@@ -63,7 +65,6 @@ export class CreatePage {
  
   }
 
-<<<<<<< HEAD
   addCenterMarker(){
     var marker = new google.maps.Marker({
       map: this.map,
@@ -98,27 +99,41 @@ export class CreatePage {
 
     let content = "<h4>Set up a game!</h4>";         
 
-    this.addInfoWindow(marker, content);
-    
-     
-
+    this.addInfoWindow(marker, event);
     
    }
 
-   addInfoWindow(marker, content){
+   goCourt(){
+    this.navCtrl.push(SearchCourtPage)
     
-     let infoWindow = new google.maps.InfoWindow({
-       content: content
-     });
+   }
+
+   goToCourt(event) {
+      this.navCtrl.push(LoginPage)
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode({
+        'latLng': event.latLng
+      }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          if (results[0]) {
+            this.navCtrl.push(SearchCourtPage, {'address': results[0].formatted_address});
+          }
+        }
+      });
+
+      this.navCtrl.push(SearchCourtPage, {'address': 'nimic'});
+   }
+
+   addInfoWindow(marker, event){
     
      google.maps.event.addListener(marker, 'click', () => {
+
+       var content="<input type='button' name='pick_location' value='Play here!' onclick='goToCourt("+event+")'>";
+       var infoWindow = new google.maps.InfoWindow();  
+       infoWindow.setContent(content);
        infoWindow.open(this.map, marker);
      });
     
    }
 
-=======
-  ionViewDidLoad() {
-  }
->>>>>>> 8de519d98146eb012a2ed90b74978e9fa00b2506
 }

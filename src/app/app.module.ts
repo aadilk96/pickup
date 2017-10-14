@@ -8,6 +8,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { FeedPage } from '../pages/feed/feed';
 import { CreatePage } from '../pages/create/create';
+import { SearchCourtPage } from '../pages/searchcourt/searchcourt';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { GamesPage } from '../pages/games/games';
 import { AchievementsPage } from '../pages/achievements/achievements';
@@ -45,7 +46,8 @@ export const firebaseConfig = {
     CreatePage,
     DashboardPage,
     GamesPage,
-    AchievementsPage
+    AchievementsPage,
+    SearchCourtPage
   ],
   imports: [
     BrowserModule,
@@ -65,7 +67,8 @@ export const firebaseConfig = {
     CreatePage,
     DashboardPage,
     GamesPage,
-    AchievementsPage
+    AchievementsPage,
+    SearchCourtPage
   ],
   providers: [
     AuthProvider,
@@ -73,13 +76,9 @@ export const firebaseConfig = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
-<<<<<<< HEAD
     Geolocation,
-    MockDataProvider
-=======
     MockDataProvider,
     DatabaseProvider
->>>>>>> 8de519d98146eb012a2ed90b74978e9fa00b2506
   ]
 })
 export class AppModule {}
