@@ -5,6 +5,8 @@ import { DatabaseProvider } from '../../providers/database/database';
 import { WelcomePage } from '../welcome/welcome';
 import { AlertController } from 'ionic-angular';
 
+import { Chart } from 'chart.js';
+
 export class User {
   firstName: string;
   lastName: string;
