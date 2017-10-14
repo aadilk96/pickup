@@ -4,6 +4,7 @@ import { NavController, AlertController } from 'ionic-angular';
 import { WelcomePage } from '../welcome/welcome';
 import { DatabaseProvider } from '../../providers/database/database';
 import { AuthProvider } from '../../providers/auth/auth';
+import { DataProvider } from '../../providers/data/data';
 import { User } from '../../models/user';
 
 @IonicPage()
@@ -23,7 +24,7 @@ export class DashboardPage {
     userId: ''
   }
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private db: DatabaseProvider, private auth: AuthProvider) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private db: DatabaseProvider, private auth: AuthProvider, private dp: DataProvider) {
     let userid = this.auth.getCurrentUserId();
     console.log(userid);
     this.db.onGetUser(userid, snapshot => {
