@@ -19,4 +19,33 @@ page-dashboard {
         right: 25px; 
     }
 
+
+    .card.col-card{
+        margin:0;
+      }
+      .card.col-card .item h2,
+      .card.col-card .item p{
+        font-size: 12px;
+      }
+      
+      .col img{
+        width: 100%;
+        margin-left: 20px
+      }
+      
+      .timeline{
+        width: 3px;
+        height: 70px;
+        background-color: grey;
+        margin-left: 60px;
+        display: block;
+      }
+      
+      .timeline-col{
+        padding: 10;
+      }
+      
+      .badge{
+        margin-top: 20px;
+      }
 }

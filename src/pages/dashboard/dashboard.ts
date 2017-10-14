@@ -22,6 +22,7 @@ export class User {
   selector: 'page-dashboard',
   templateUrl: 'dashboard.html',
 })
+
 export class DashboardPage {
   @ViewChild('lineCanvas') lineCanvas;
   lineChart: any;
@@ -173,6 +174,19 @@ export class DashboardPage {
       ]
     });
     prompt.present();
+  }
+
+  top_item_array = ["Game 1", "Game 2", "Game 3"]
+  bottom_item_array = ["Game 4", "Game 5", "Game 6"]
+
+  move_from_top_to_bottom(idx){
+    this.bottom_item_array.push(this.top_item_array[idx])
+    this.top_item_array.splice(idx, 1)
+  }
+
+  move_from_bottom_to_top(idx){
+    this.top_item_array.push(this.bottom_item_array[idx])
+    this.bottom_item_array.splice(idx, 1)
   }
   
 }
