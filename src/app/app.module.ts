@@ -11,9 +11,10 @@ import { MapCourtsPage } from '../pages/mapcourts/mapcourts';
 import { SearchCourtPage } from '../pages/searchcourt/searchcourt';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { GamesPage } from '../pages/games/games';
+import { CourtSelectionPage } from '../pages/courtselection/courtselection';
 import { AchievementsPage } from '../pages/achievements/achievements';
 import { TabsPage } from '../pages/tabs/tabs';
-import { CourthierarchyPage } from '../pages/courthierarchy/courthierarchy'; 
+import { CourtHierarchyPage } from '../pages/courthierarchy/courthierarchy'; 
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -49,8 +50,9 @@ export const firebaseConfig = {
     DashboardPage,
     GamesPage,
     AchievementsPage,
-    CourthierarchyPage,
-    SearchCourtPage
+    CourtHierarchyPage,
+    SearchCourtPage,
+    CourtSelectionPage
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,8 @@ export const firebaseConfig = {
     DashboardPage,
     GamesPage,
     AchievementsPage,
-    SearchCourtPage
+    SearchCourtPage,
+    CourtSelectionPage
   ],
   providers: [
     AuthProvider,
