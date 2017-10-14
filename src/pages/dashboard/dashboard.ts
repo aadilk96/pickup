@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { DatabaseProvider } from '../../providers/database/database';
@@ -23,6 +23,9 @@ export class User {
   templateUrl: 'dashboard.html',
 })
 export class DashboardPage {
+  @ViewChild('lineCanvas') lineCanvas;
+  lineChart: any;
+
   User = "Account";
   user: User = {
     firstName: 'adolf',
