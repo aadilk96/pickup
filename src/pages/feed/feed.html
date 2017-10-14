@@ -6,10 +6,51 @@
     
 <ion-content >
     <ion-list>
-        <ion-card *ngFor="let i of items">
+        <ion-card>
             <ion-card-content>
-            <p>Pick up! There is a game nearby by your position. The court is at the UPC. Plenty of people joined, come and compete with the other players,
-            earn points and be the owner of the cours. See you there!
+            <p>Pick up! There is a game nearby your position. The court is at the UPC. Plenty of people joined, come and compete with the other players,
+            earn points and be the owner of the cours. See you there!</p>
+            </ion-card-content>
+        
+            <ion-row>
+                <ion-col>
+                    <button ion-button icon-left clear small>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>5 Likes</div>
+                    </button>
+                </ion-col>
+                <ion-col center text-center>
+                    <ion-note style="position: absolute; bottom: 16px; right: 16px;">
+                    15min ago
+                    </ion-note>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+
+
+        <ion-card>
+            <ion-card-content>
+            <p>Do you want to see who is the best on the court? Come in 15 minutes, at Cancha De Baloncesto Del Penyafort.</p>
+            </ion-card-content>
+            
+            <ion-row>
+                <ion-col>
+                    <button ion-button icon-left clear small>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>10 Likes</div>
+                    </button>
+                </ion-col>
+                <ion-col center text-center>
+                    <ion-note style="position: absolute; bottom: 16px; right: 16px;">
+                    2h ago
+                    </ion-note>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-content>
+            <p>Pick up and play with Alex and two other friends this afternoon! Have fun!
             </p>
             </ion-card-content>
         
@@ -17,16 +58,102 @@
                 <ion-col>
                     <button ion-button icon-left clear small>
                     <ion-icon name="thumbs-up"></ion-icon>
-                    <div>{{i}} Likes</div>
+                    <div>7 Likes</div>
                     </button>
                 </ion-col>
                 <ion-col center text-center>
                     <ion-note style="position: absolute; bottom: 16px; right: 16px;">
-                    11h ago
+                    15h ago
                     </ion-note>
                 </ion-col>
             </ion-row>
         </ion-card>
+
+        <ion-card>
+            <ion-card-content>
+            <p>There's a game going on, around Basket Heron. Come and pik up!
+            </p>
+            </ion-card-content>
+            
+            <ion-row>
+                <ion-col>
+                    <button ion-button icon-left clear small>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>14 Likes</div>
+                    </button>
+                </ion-col>
+                <ion-col center text-center>
+                    <ion-note style="position: absolute; bottom: 16px; right: 16px;">
+                    19h ago
+                    </ion-note>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-content>
+            <p>Don't let the others to gain your court, go out there and earn points! Pick up!
+            </p>
+            </ion-card-content>
+            
+            <ion-row>
+                <ion-col>
+                    <button ion-button icon-left clear small>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>3 Likes</div>
+                    </button>
+                </ion-col>
+                <ion-col center text-center>
+                    <ion-note style="position: absolute; bottom: 16px; right: 16px;">
+                    2d ago
+                    </ion-note>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-content>
+            <p>Hey there! Let's throw some shots, invite your friends and pick up together!
+            </p>
+            </ion-card-content>
+            
+            <ion-row>
+                <ion-col>
+                    <button ion-button icon-left clear small>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>5 Likes</div>
+                    </button>
+                </ion-col>
+                <ion-col center text-center>
+                    <ion-note style="position: absolute; bottom: 16px; right: 16px;">
+                    4d ago
+                    </ion-note>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+
+        <ion-card>
+            <ion-card-content>
+            <p>There's a new owner at the court at Cancha de Baloncesto Parc del Clot! Come and try to compete! The points say it all!
+            </p>
+            </ion-card-content>
+            
+            <ion-row>
+                <ion-col>
+                    <button ion-button icon-left clear small>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>8 Likes</div>
+                    </button>
+                </ion-col>
+                <ion-col center text-center>
+                    <ion-note style="position: absolute; bottom: 16px; right: 16px;">
+                    1w ago
+                    </ion-note>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+
+
     </ion-list>
 
     <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
