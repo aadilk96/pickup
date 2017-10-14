@@ -74,7 +74,8 @@ export const firebaseConfig = {
     GamesPage,
     AchievementsPage,
     SearchCourtPage,
-    CourtSelectionPage
+    CourtSelectionPage,
+    CourtHierarchyPage
   ],
   providers: [
     AuthProvider,

@@ -13,6 +13,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { ViewChild, ElementRef } from '@angular/core';
 import { SearchCourtPage } from '../searchcourt/searchcourt';
+import { CourtHierarchyPage } from '../courthierarchy/courthierarchy'
 import { LoginPage } from '../login/login';
 
 declare var google;
@@ -104,6 +105,11 @@ export class MapCourtsPage {
 
    goCourt(){
     this.navCtrl.push(SearchCourtPage)
+    
+   }
+
+   goHierarchy(){
+    this.navCtrl.push(CourtHierarchyPage)
     
    }
 
