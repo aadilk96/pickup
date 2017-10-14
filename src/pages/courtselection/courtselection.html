@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Court Title</ion-title>
+    <ion-title>Create a game</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,7 +19,7 @@
           <ion-input placeholder="Title"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="Location">FILLED</ion-input>
+          <ion-input placeholder="Location"></ion-input>
         </ion-item>
     </ion-list>
 
@@ -40,6 +40,13 @@
            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
         </ion-item>
 
+        <ion-item>
+            <ion-label>Number of players</ion-label>
+            <ion-input type="number"></ion-input>
+          </ion-item>
+
     </ion-list>
+
+    <button class="login btn" ion-button full (click)="confirmGame()">CREATE GAME</button>
 
 </ion-content>

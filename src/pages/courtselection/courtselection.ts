@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AchievementsPage } from '../achievements/achievements'
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the CourtselectionPage page.
@@ -14,8 +16,37 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'courtselection.html',
 })
 export class CourtSelectionPage {
+  rootPage: any = AchievementsPage;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  }
+
+  confirmGame() {
+    const alert = this.alertCtrl.create({
+      title: 'Confirm game',
+      message: 'Are you sure you want to create the game??',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Create',
+          handler: () => {
+            console.log('Game created');
+            this.goHome();
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  goHome(){
+    this.navCtrl.setRoot(AchievementsPage);
   }
 
   ionViewDidLoad() {
