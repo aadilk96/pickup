@@ -49,12 +49,12 @@ export class MockDataProvider {
     {
       title: "What is PickUp?",
       description: "Find and create pickup games near <b>you!</b>",
-      image: "assets/logo/logo1.png"
+      image: "https://cdn.pixabay.com/photo/2013/07/12/15/41/soccer-150319_960_720.png"
     },
     {
       title: "With Who Though?",
       description: "Create <b>your team</b> and rule the streets!",
-      image: "assets/logo/logo1.png"
+      image: "https://cdn.pixabay.com/photo/2014/04/03/10/24/volleyball-310328_960_720.png"
     }
   ];
 
