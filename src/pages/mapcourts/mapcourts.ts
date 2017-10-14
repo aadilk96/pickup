@@ -9,7 +9,7 @@ import {
  } from '@ionic-native/google-maps';
 
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { ViewChild, ElementRef } from '@angular/core';
 import { SearchCourtPage } from '../searchcourt/searchcourt';
@@ -29,6 +29,7 @@ export class MapCourtsPage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   gmarkers = [];
+  loadingCtrl: any;
   
   image_basketball = {
     url: "https://cdn.pixabay.com/photo/2014/04/03/09/59/basketball-309539_1280.png", // url
@@ -37,8 +38,11 @@ export class MapCourtsPage {
     anchor: new google.maps.Point(15, 15) // anchor
   };
  
-  constructor(public navCtrl: NavController, public geolocation: Geolocation) {
- 
+  constructor(public navCtrl: NavController, public geolocation: Geolocation, public ldgCtrl: LoadingController) {
+    this.loadingCtrl = this.ldgCtrl.create({
+      content: 'Please wait...'
+    });
+    this.loadingCtrl.present();
   }
  
   ionViewDidLoad(){
@@ -60,6 +64,8 @@ export class MapCourtsPage {
            this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
            this.map.addListener('click', (event) => this.addMarker(event))
+
+           this.loadingCtrl.dismiss();
       
          }, (err) => {
            console.log(err);
