@@ -13,7 +13,6 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
 import { GamesPage } from '../pages/games/games';
 import { AchievementsPage } from '../pages/achievements/achievements';
 import { TabsPage } from '../pages/tabs/tabs';
-import { Geolocation } from '@ionic-native/geolocation';
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -25,6 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthProvider } from '../providers/auth/auth';
 import { MockDataProvider } from '../providers/mock-data/mock-data';
 import { DatabaseProvider } from '../providers/database/database';
+
+import { Geolocation } from '@ionic-native/geolocation';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBmWolHQJFsC7M3f9cFb6fX_YziiymNFXo",

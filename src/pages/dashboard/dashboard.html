@@ -1,13 +1,11 @@
 <ion-content padding>
-  <button ion-button primary center (click)="logout()">Logout</button>
-
   <div padding>
     <ion-segment [(ngModel)]="User">
       <ion-segment-button value="Account">
         Account
       </ion-segment-button>
-      <ion-segment-button value="Activity">
-        Activity
+      <ion-segment-button value="Info">
+        Info
       </ion-segment-button>
       <ion-segment-button value="Records">
         Records
@@ -21,55 +19,52 @@
           <img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png" />
       </div>  
       <ion-card>
-          <ion-fab right bottom>
-              <button ion-fab color="primary"><ion-icon name="create"></ion-icon></button>
+          <ion-fab right bottom id="fixedbutton">
+              <button ion-fab color="primary"><ion-icon name="camera"></ion-icon></button>
           </ion-fab>
 
-          <ion-list>
-            <button item-start ion-item color="light">
+            <button item-start ion-item color="light" (click)="showPromptFirstName()">
               First name:
               <ion-note item-end>
                 {{user.firstName}}
               </ion-note>
             </button>
         
-            <button item-start ion-item color="light">
+            <button item-start ion-item color="light" (click)="showPromptLastName()">
               Last name:
               <ion-note item-end>
                 {{user.lastName}}
               </ion-note>
             </button>
 
-            <button item-start ion-item color="light">
+            <button item-start ion-item color="light" (click)="showPromptAge()">
                 Birthdate:
                 <ion-note item-end>
                   {{user.birthday}}
                 </ion-note>
             </button>
         
-            <button item-start ion-item color="light">
+            <button item-start ion-item color="light" (click)="showPromptEmail()">
               Email:
               <ion-note item-end>
                 {{user.email}}
               </ion-note>
             </button>
         
-            <button item-start ion-item color="light">
+            <button item-start ion-item color="light" (click)="showPromptPass()">
               Password:
               <ion-note item-end>
                 *******
               </ion-note>
             </button>
-
-          </ion-list>
         </ion-card>
     </ion-list>
 
-    <ion-list *ngSwitchCase="'Activity'">
+    <ion-list *ngSwitchCase="'Info'">
 
-        <ion-fab right bottom>
+        <ion-fab right bottom  id="fixedbutton">
           <button ion-fab color="primary">
-            <ion-icon name="share" >
+            <ion-icon name="share">
             </ion-icon>
           </button>
           <ion-fab-list side="top">
@@ -82,7 +77,7 @@
 
         <ion-card color="grey">
           <ion-card-header color="primary">
-                Points:
+                Pointss:
           </ion-card-header>
           <ion-card-content>
               23

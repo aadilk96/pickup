@@ -4,6 +4,30 @@
     </ion-navbar>
 </ion-header>
     
-<ion-content padding>
+<ion-content >
+    <ion-list>
+        <ion-card *ngFor="let i of items">
+            <ion-card-content>
+            <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+            </ion-card-content>
+        
+            <ion-row>
+                <ion-col>
+                    <button ion-button icon-left clear small>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>{{i}} Likes</div>
+                    </button>
+                </ion-col>
+                <ion-col center text-center>
+                    <ion-note style="position: absolute; bottom: 16px; right: 16px;">
+                    11h ago
+                    </ion-note>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+    </ion-list>
 
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>

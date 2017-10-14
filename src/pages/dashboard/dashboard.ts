@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { DatabaseProvider } from '../../providers/database/database';
 import { WelcomePage } from '../welcome/welcome';
+import { AlertController } from 'ionic-angular';
 
 export class User {
   firstName: string;
@@ -20,9 +21,7 @@ export class User {
   templateUrl: 'dashboard.html',
 })
 export class DashboardPage {
-
   User = "Account";
-
   user: User = {
     firstName: 'adolf',
     lastName: 'hitler',
@@ -33,14 +32,144 @@ export class DashboardPage {
     uid: 'wfwf3849f3h'
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthProvider, private db: DatabaseProvider) {  
+  constructor(public alertCtrl: AlertController) {
   }
 
-  ionViewDidLoad() {
+  showPromptFirstName() {
+    let prompt = this.alertCtrl.create({
+      title: 'Edit',
+      inputs: [
+        {
+          name: 'FirstName',
+          placeholder: 'First Name'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            console.log('Saved clicked');
+          }
+        }
+      ]
+    });
+    prompt.present();
   }
 
-  logout() {
-    this.navCtrl.setRoot(WelcomePage);
-    this.auth.logout();
+  showPromptLastName() {
+    let prompt = this.alertCtrl.create({
+      title: 'Edit',
+      inputs: [
+        {
+          name: 'LastName',
+          placeholder: 'Last Name'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            console.log('Saved clicked');
+          }
+        }
+      ]
+    });
+    prompt.present();
   }
+  
+  showPromptAge() {
+    let prompt = this.alertCtrl.create({
+      title: 'Edit',
+      inputs: [
+        {
+          name: 'Age',
+          placeholder: 'Age'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            console.log('Saved clicked');
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+
+  showPromptEmail() {
+    let prompt = this.alertCtrl.create({
+      title: 'Edit',
+      inputs: [
+        {
+          name: 'Email',
+          placeholder: 'Email'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            console.log('Saved clicked');
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+
+  showPromptPass() {
+    let prompt = this.alertCtrl.create({
+      title: 'Edit',
+      inputs: [
+        {
+          name: 'Pass',
+          placeholder: 'Password'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            console.log('Saved clicked');
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+  
 }
+
+
