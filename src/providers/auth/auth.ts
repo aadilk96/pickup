@@ -9,6 +9,10 @@ export class AuthProvider {
     
   }
 
+  logout() {
+    this.auth.auth.signOut();
+  }
+
   // takes email, password and display name
   // returns null if succeeded
   // returns error if failed (check error.message, error.code)
