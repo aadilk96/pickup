@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
   Generated template for the DashboardPage page.
 
@@ -5,7 +6,10 @@
   Ionic pages and navigation.
 -->
 
+=======
+>>>>>>> 565a63075bfcc6c697e6a13116352cbcc639cfc1
 <ion-content padding>
+  <button ion-button primary center (click)="logout()">Logout</button>
 
   <div padding>
     <ion-segment [(ngModel)]="User">
@@ -32,6 +36,7 @@
           </ion-fab>
 
           <ion-list>
+<<<<<<< HEAD
             <button ion-item color="light" block (click)="showPromptFirstName()"> 
               First name:
             </button>            
@@ -50,6 +55,41 @@
         
             <button ion-item color="light" block (click)="showPromptPass()">
                 Password:
+=======
+            <button item-start ion-item color="light">
+              First name:
+              <ion-note item-end>
+                {{user.firstName}}
+              </ion-note>
+            </button>
+        
+            <button item-start ion-item color="light">
+              Last name:
+              <ion-note item-end>
+                {{user.lastName}}
+              </ion-note>
+            </button>
+
+            <button item-start ion-item color="light">
+                Birthdate:
+                <ion-note item-end>
+                  {{user.birthday}}
+                </ion-note>
+            </button>
+        
+            <button item-start ion-item color="light">
+              Email:
+              <ion-note item-end>
+                {{user.email}}
+              </ion-note>
+            </button>
+        
+            <button item-start ion-item color="light">
+              Password:
+              <ion-note item-end>
+                *******
+              </ion-note>
+>>>>>>> 565a63075bfcc6c697e6a13116352cbcc639cfc1
             </button>
 
           </ion-list>
@@ -135,4 +175,8 @@
     </ion-list>
 
   </div>
+<<<<<<< HEAD
 </ion-content>
+=======
+</ion-content>
+>>>>>>> 565a63075bfcc6c697e6a13116352cbcc639cfc1

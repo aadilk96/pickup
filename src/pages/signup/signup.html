@@ -30,7 +30,7 @@
       <ion-card>
         <ion-item>
           <ion-label color="primary" floating>First Name</ion-label>
-          <ion-input type="text" name="firstName" [(ngModel)]="firstName" required></ion-input>  
+          <ion-input type="text" name="firstName" [(ngModel)]="user.firstName" required></ion-input>  
         </ion-item>
         
       </ion-card>
@@ -38,21 +38,21 @@
       <ion-card>  
         <ion-item>
             <ion-label color="primary" floating>Last Name</ion-label>
-            <ion-input type="text" name="lastName" [(ngModel)]="lastName" required></ion-input>
+            <ion-input type="text" name="lastName" [(ngModel)]="user.lastName" required></ion-input>
         </ion-item>
       </ion-card>
 
       <ion-card>
         <ion-item>
             <ion-label color="primary" floating>Email</ion-label>
-            <ion-input type="email" name="email" [(ngModel)]="email" required></ion-input>
+            <ion-input type="email" name="email" [(ngModel)]="user.email" required></ion-input>
         </ion-item>
       </ion-card>
       
       <ion-card>
         <ion-item>
-            <ion-label color="primary" floating>Age</ion-label>
-            <ion-input type="number" name="age" [(ngModel)]="age" required></ion-input>
+            <ion-label color="primary" floating>Birthday</ion-label>
+            <ion-datetime displayFormat="MMM / DD / YYYY" pickerFormat="MMM / DD / YYYY" [(ngModel)]="user.birthday" required></ion-datetime>
         </ion-item>
       </ion-card>
 

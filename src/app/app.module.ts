@@ -12,6 +12,7 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
 import { GamesPage } from '../pages/games/games';
 import { AchievementsPage } from '../pages/achievements/achievements';
 import { TabsPage } from '../pages/tabs/tabs';
+import { Geolocation } from '@ionic-native/geolocation';
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -22,6 +23,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { AuthProvider } from '../providers/auth/auth';
 import { MockDataProvider } from '../providers/mock-data/mock-data';
+import { DatabaseProvider } from '../providers/database/database';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBmWolHQJFsC7M3f9cFb6fX_YziiymNFXo",
@@ -71,7 +73,13 @@ export const firebaseConfig = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
+<<<<<<< HEAD
+    Geolocation,
     MockDataProvider
+=======
+    MockDataProvider,
+    DatabaseProvider
+>>>>>>> 8de519d98146eb012a2ed90b74978e9fa00b2506
   ]
 })
 export class AppModule {}

@@ -1,8 +1,19 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
+import { DatabaseProvider } from '../../providers/database/database';
 import { WelcomePage } from '../welcome/welcome';
 import { AlertController } from 'ionic-angular';
+
+export class User {
+  firstName: string;
+  lastName: string;
+  displayName: string;
+  email: string;
+  birthday: string;
+  joindate: string;
+  uid: string;
+}
 
 @IonicPage()
 @Component({
@@ -40,6 +51,7 @@ export class DashboardPage {
     prompt.present();
   }
 
+<<<<<<< HEAD
   showPromptLastName() {
     let prompt = this.alertCtrl.create({
       title: 'Edit',
@@ -65,6 +77,21 @@ export class DashboardPage {
       ]
     });
     prompt.present();
+=======
+  User = "Account";
+
+  user: User = {
+    firstName: 'adolf',
+    lastName: 'hitler',
+    displayName: 'nazi001',
+    email: 'nazi@germany.de',
+    birthday: '01/01/1909',
+    joindate: '10/10/2017',
+    uid: 'wfwf3849f3h'
+  }
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthProvider, private db: DatabaseProvider) {  
+>>>>>>> 565a63075bfcc6c697e6a13116352cbcc639cfc1
   }
 
   showPromptAge() {

@@ -12,9 +12,9 @@ export class TabsPage {
 
   tab1Root = DashboardPage;
   tab2Root = FeedPage;
-  tab3Root = CreatePage;
-  tab4Root = AchievementsPage; 
-  tab5Root = GamesPage; 
+  tab3Root = AchievementsPage;
+  tab4Root = GamesPage; 
+  tab5Root = CreatePage; 
 
   constructor() {
   }
