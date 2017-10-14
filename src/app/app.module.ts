@@ -12,6 +12,7 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
 import { GamesPage } from '../pages/games/games';
 import { AchievementsPage } from '../pages/achievements/achievements';
 import { TabsPage } from '../pages/tabs/tabs';
+import { Geolocation } from '@ionic-native/geolocation';
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -71,6 +72,7 @@ export const firebaseConfig = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
+    Geolocation,
     MockDataProvider
   ]
 })
