@@ -35,7 +35,7 @@ export class SignupPage {
   }
 
   success() {
-    this.navCtrl.push(TabsPage);
+    this.navCtrl.setRoot(TabsPage);
   }
 
   validate() {
