@@ -10,8 +10,7 @@ export class DatabaseProvider {
   }
 
   createUser(userJson) {
-    console.log("xxxx");
-    var x = this.db.database.ref('/users/' + userJson.uid).set(userJson);
+    this.db.database.ref('/users/' + userJson.uid).set(userJson);
   }
 
   createEvent(eventJson) {
