@@ -21,7 +21,7 @@ export class LoginPage {
       if (user != null) {
         this.success();
       }
-    })
+    });
     var err = this.auth.signInEmail(this.email, this.password, err => {
       this.alertCtrl.create({title: err, buttons: ['OK']}).present();
     });
