@@ -18,8 +18,6 @@ export class DashboardPage {
   }
 
   logout() {
-    this.db.createEvent({hello: 'test', uid: 'xyz'});
-    this.db.deleteEvent("-KwNvao8qUy7ts1dUtB3");
     this.navCtrl.setRoot(WelcomePage);
     this.auth.logout();
   }
