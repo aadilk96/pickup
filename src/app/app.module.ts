@@ -22,6 +22,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { AuthProvider } from '../providers/auth/auth';
 import { MockDataProvider } from '../providers/mock-data/mock-data';
+import { DatabaseProvider } from '../providers/database/database';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBmWolHQJFsC7M3f9cFb6fX_YziiymNFXo",
@@ -71,7 +72,8 @@ export const firebaseConfig = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
-    MockDataProvider
+    MockDataProvider,
+    DatabaseProvider
   ]
 })
 export class AppModule {}

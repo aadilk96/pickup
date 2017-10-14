@@ -2,7 +2,18 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, AlertController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { AuthProvider } from '../../providers/auth/auth';
+import { DatabaseProvider } from '../../providers/database/database';
  
+export class User {
+  firstName: string;
+  lastName: string;
+  displayName: string;
+  email: string;
+  birthday: string;
+  joindate: string;
+  uid: string;
+}
+
 @IonicPage()
 @Component({
   selector: 'page-signup',
@@ -10,22 +21,31 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class SignupPage {
 
-  firstName = "";
-  lastName = "";
+  user: User = {
+    firstName: "",
+    lastName: "",
+    displayName: "",
+    email: "",
+    birthday: "",
+    joindate: "",
+    uid: ""
+  }
+
   password = "";
   passwordConfirm = "";
-  email = "";
-  age: number;
 
-  constructor(public navCtrl: NavController, public alCtrl: AlertController, private auth: AuthProvider) {
+  constructor(public navCtrl: NavController, public alCtrl: AlertController, private auth: AuthProvider, private db: DatabaseProvider) {
   }
 
   signup() {
     var res = this.validate();
+    this.user.displayName = this.user.firstName + " " + this.user.lastName;
     if (res == '') {
-      this.auth.createEmailAccount(this.email, this.password, this.firstName + ' ' + this.lastName);
+      this.auth.createEmailAccount(this.user.email, this.password, this.user.displayName);
       this.auth.onAuthChanged(user => {
         if (user != null) {
+          this.user.uid = user.uid;
+          this.user.joindate = this.getCurrentDate();
           this.success();
         }
       })
@@ -34,13 +54,25 @@ export class SignupPage {
     }
   }
 
+  getCurrentDate() {
+    var now = new Date();
+    return now.getFullYear() + "-" + now.getMonth() + "-" + now.getDate();
+  }
+
   success() {
+    this.db.createUser(this.user);
     this.navCtrl.setRoot(TabsPage);
   }
 
+  isOverage(){
+    let now = new Date();
+    now.setFullYear(now.getFullYear() - 14);
+    return now.getTime() >= new Date(this.user.birthday).getTime();
+  }
+
   validate() {
-    if (this.age == null) {
-      return "Please enter your age.";
+    if (!this.isOverage()) {
+      return "You have to be 14 or older to use this app.";
     } else if (this.password != this.passwordConfirm) { 
       return "Passwords don't match.";
     } else if (this.password.length < 6) {
