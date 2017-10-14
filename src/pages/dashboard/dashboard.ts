@@ -21,6 +21,17 @@ export class User {
   templateUrl: 'dashboard.html',
 })
 export class DashboardPage {
+  User = "Account";
+  user: User = {
+    firstName: 'adolf',
+    lastName: 'hitler',
+    displayName: 'nazi001',
+    email: 'nazi@germany.de',
+    birthday: '01/01/1909',
+    joindate: '10/10/2017',
+    uid: 'wfwf3849f3h'
+  }
+
   constructor(public alertCtrl: AlertController) {
   }
 
@@ -51,7 +62,6 @@ export class DashboardPage {
     prompt.present();
   }
 
-<<<<<<< HEAD
   showPromptLastName() {
     let prompt = this.alertCtrl.create({
       title: 'Edit',
@@ -77,22 +87,9 @@ export class DashboardPage {
       ]
     });
     prompt.present();
-=======
-  User = "Account";
-
-  user: User = {
-    firstName: 'adolf',
-    lastName: 'hitler',
-    displayName: 'nazi001',
-    email: 'nazi@germany.de',
-    birthday: '01/01/1909',
-    joindate: '10/10/2017',
-    uid: 'wfwf3849f3h'
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthProvider, private db: DatabaseProvider) {  
->>>>>>> 565a63075bfcc6c697e6a13116352cbcc639cfc1
-  }
+  
 
   showPromptAge() {
     let prompt = this.alertCtrl.create({
