@@ -10,9 +10,9 @@ import { MapCourtsPage } from '../mapcourts/mapcourts'
 })
 export class TabsPage {
 
-  tab1Root = MapCourtsPage;
+  tab1Root = AchievementsPage;
   tab2Root = FeedPage;
-  tab3Root = AchievementsPage;
+  tab3Root = MapCourtsPage;
   tab4Root = GamesPage; 
   tab5Root = DashboardPage; 
 
