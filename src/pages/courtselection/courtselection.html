@@ -20,30 +20,35 @@
         </ion-item>
     </ion-list>
 
-    <ion-list>
-        <ion-item>
-          <ion-label>Date</ion-label>
-          <ion-datetime displayFormat="MMM DD YYYY"></ion-datetime>
-        </ion-item>
+    <form name="myForm" novalidate>
+
+        <ion-list>
+            <ion-item>
+              <ion-label>Date</ion-label>
+              <ion-datetime displayFormat="MMM DD YYYY" required></ion-datetime>
+            </ion-item>
+        
+        
+            <ion-item>
+              <ion-label>Start Time</ion-label>
+              <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" required></ion-datetime>
+            </ion-item>
+          
+            <ion-item>
+               <ion-label>Finish Time</ion-label>
+               <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" required></ion-datetime>
+            </ion-item>
     
+            <ion-item>
+                <ion-label>Number of players</ion-label>
+                <ion-input type="number" required></ion-input>
+              </ion-item>
     
-        <ion-item>
-          <ion-label>Start Time</ion-label>
-          <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
-        </ion-item>
-      
-        <ion-item>
-           <ion-label>Finish Time</ion-label>
-           <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
-        </ion-item>
+        </ion-list>
+    
 
-        <ion-item>
-            <ion-label>Number of players</ion-label>
-            <ion-input type="number"></ion-input>
-          </ion-item>
-
-    </ion-list>
-
+    </form>
+    
     <button class="login btn" ion-button full (click)="confirmGame()">CREATE GAME</button>
 
 </ion-content>
