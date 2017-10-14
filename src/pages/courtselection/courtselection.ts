@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AchievementsPage } from '../achievements/achievements'
+import { MapCourtsPage } from '../mapcourts/mapcourts'
 import { AlertController } from 'ionic-angular';
-
-/**
- * Generated class for the CourtselectionPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -16,7 +9,6 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'courtselection.html',
 })
 export class CourtSelectionPage {
-  rootPage: any = AchievementsPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
@@ -46,11 +38,10 @@ export class CourtSelectionPage {
   }
 
   goHome(){
-    this.navCtrl.setRoot(AchievementsPage);
+    this.navCtrl.setRoot(MapCourtsPage);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CourtSelectionPage');
   }
 
 }
