@@ -66,8 +66,17 @@ export class GamesPage {
     }
   }
 
-  goToJoin() {
-    this.navCtrl.push(JoinPage)
+  goToJoin(lat, lon) {
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({
+      'latLng': new google.maps.LatLng(lat, lon)
+    }, (results, status) => {
+      if (status == google.maps.GeocoderStatus.OK) {
+        if (results[0]) {
+          this.navCtrl.push(JoinPage, {address: results[0].formatted_address});
+        }
+      }
+    });
   }
 
   loadMap() {
@@ -79,10 +88,21 @@ export class GamesPage {
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
-    
+
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+      
+      this.addMarkerLatLon(position.coords.latitude, position.coords.longitude);
     });
   }
+
+   addInfoWindow(marker, event){
+    google.maps.event.addListener(marker, 'click', () => {
+      var content="Play here!";
+      var infoWindow = new google.maps.InfoWindow();  
+      infoWindow.setContent(content);
+      infoWindow.open(this.map, marker);
+    })
+}
 
    addMarkerLatLon(lat, lon){
       var latlon = new google.maps.LatLng(lat, lon);
@@ -93,7 +113,11 @@ export class GamesPage {
         animation: google.maps.Animation.BOUNCE,
         map: this.map,
         icon: this.image_basketball
-      });       
+      });  
+      
+      marker.addListener('click', () => {
+        this.goToJoin(lat, lon);
+      })
    }
 }
 
