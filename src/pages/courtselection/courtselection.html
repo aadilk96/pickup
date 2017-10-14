@@ -7,12 +7,39 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>courtselection</ion-title>
+    <ion-title>Court Title</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-list>
+        <ion-item>
+          <ion-input placeholder="Title"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="Location">FILLED</ion-input>
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-item>
+          <ion-label>Date</ion-label>
+          <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month"></ion-datetime>
+        </ion-item>
+    
+    
+        <ion-item>
+          <ion-label>Start Time</ion-label>
+          <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts"></ion-datetime>
+        </ion-item>
+      
+        <ion-item>
+           <ion-label>Finish Time</ion-label>
+           <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts"></ion-datetime>
+        </ion-item>
+
+    </ion-list>
 
 </ion-content>

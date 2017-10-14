@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CourtSelectionPage } from '../courtselection/courtselection'
 
 /**
  * Generated class for the CourtPage page.
@@ -36,7 +37,7 @@ export class SearchCourtPage {
   }
 
   goToCourtSelection(courtName){
-      this.navCtrl.push(SearchCourtPage, {"location_name": courtName});
+      this.navCtrl.push(CourtSelectionPage, {"location_name": courtName});
   }
 
   getItems(event: any) {
