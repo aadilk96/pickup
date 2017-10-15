@@ -3,7 +3,7 @@
           <ion-list >
               <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
               <ion-list>
-                <ion-item *ngFor="let item of items" (click)="goToJoin()">
+                <ion-item *ngFor="let item of items" (click)="goToJoinNoLatLon()">
                   {{ item }}
                 </ion-item>
               </ion-list>

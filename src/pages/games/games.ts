@@ -68,6 +68,19 @@ export class GamesPage {
     });
   }
 
+  goToJoinNoLatLon() {
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({
+      'latLng': new google.maps.LatLng(41.383159, 2.191586)
+    }, (results, status) => {
+      if (status == google.maps.GeocoderStatus.OK) {
+        if (results[0]) {
+          this.navCtrl.push(JoinPage, {address: results[0].formatted_address});
+        }
+      }
+    });
+  }
+
   loadMap() {
     this.geolocation.getCurrentPosition().then((position) => {
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
