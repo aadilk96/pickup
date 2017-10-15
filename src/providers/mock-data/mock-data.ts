@@ -44,17 +44,17 @@ export class MockDataProvider {
   slides = [{
       title: "Welcome to PickUp!",
       description: "Find, Compete, <b>Rule</b>",
-      image: "https://cdn.pixabay.com/photo/2017/09/22/20/54/basketball-2777016_960_720.png"
+      image: "assets/logo/basketball.png"
     },
     {
       title: "What is PickUp?",
       description: "Find and create pickup games near <b>you!</b>",
-      image: "https://cdn.pixabay.com/photo/2013/07/12/15/41/soccer-150319_960_720.png"
+      image: "assets/logo/soccer.png"
     },
     {
       title: "With Who Though?",
       description: "Create <b>your team</b> and rule the streets!",
-      image: "https://cdn.pixabay.com/photo/2014/04/03/10/24/volleyball-310328_960_720.png"
+      image: "assets/logo/volleyball.png"
     }
   ];
 

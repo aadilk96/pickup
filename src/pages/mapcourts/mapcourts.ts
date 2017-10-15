@@ -32,7 +32,7 @@ export class MapCourtsPage {
   loadingCtrl: any;
   
   image_basketball = {
-    url: "https://cdn.pixabay.com/photo/2014/04/03/09/59/basketball-309539_1280.png", // url
+    url: "assets/logo/ball.png", // url
     scaledSize: new google.maps.Size(30, 30), // scaled size
     origin: new google.maps.Point(0, 0), // origin
     anchor: new google.maps.Point(15, 15) // anchor
